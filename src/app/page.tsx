@@ -19,9 +19,8 @@ const PAGE_CONTENT_QUERY = `
     }
   }`;
 export default async function Home() {
-  const {
-    data: { homePage },
-  } = await performRequest({ query: PAGE_CONTENT_QUERY });
+  const { homePage } = await performRequest({ query: PAGE_CONTENT_QUERY });
+
   console.log(homePage);
 
   return (
