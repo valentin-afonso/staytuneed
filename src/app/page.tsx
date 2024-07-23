@@ -1,25 +1,8 @@
 import { performRequest } from "@/lib/datocms";
-const PAGE_CONTENT_QUERY = `
-  query Home {
-    homePage {
-      title
-      test {
-        ... on BlogSliderRecord {
-          id
-        }
-        ... on TextRecord {
-          id
-        }
-        ... on LinkRecord {
-          id
-          linkLabel
-          url
-        }
-      }
-    }
-  }`;
+import { queryHomePage } from "@/cms/queries/queryHomePage";
+
 export default async function Home() {
-  const { homePage } = await performRequest({ query: PAGE_CONTENT_QUERY });
+  const { homePage } = await performRequest({ query: queryHomePage });
 
   console.log(homePage);
 
