@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <div>
-      <h1>{homePage.title}</h1>
+      <h1>{homePage?.title}</h1>
     </div>
   );
 }
