@@ -1,3 +1,9 @@
+import ArticleList from "@/ui/ArticleList";
+
 export default function page() {
-  return <div>My blog</div>;
+  return (
+    <div>
+      <ArticleList />
+    </div>
+  );
 }
