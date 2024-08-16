@@ -1,19 +1,38 @@
 export const queryHomePage = `
 query Home {
   homePage {
-    title
-    test {
+    content {
       ... on BlogSliderRecord {
         id
       }
+    }
+    contentSecond {
       ... on TextRecord {
         id
+        text
       }
-      ... on LinkRecord {
+    }
+    contentThird {
+      ... on FaqRecord {
         id
-        linkLabel
-        url
+        faq {
+          question
+          id
+          answer
+        }
       }
+      ... on TextRecord {
+        id
+        text
+      }
+    }
+    id
+    slug
+    introText
+    title
+    titleDouble {
+      firstPart
+      secondPart
     }
   }
 }`;
