@@ -8,5 +8,11 @@ query Blog($slug: String!) {
       libelle
       id
     }
+    readingTime
+    content {
+      blocks
+      links
+      value
+    }
   }
 }`;

@@ -1,5 +1,7 @@
 import { performRequest } from "@/lib/datocms";
 import { queryBlog } from "@/cms/queries/queryBlog";
+import GridLayout from "@/ui/GridLayout";
+import ArticleContent from "@/ui/ArticleContent";
 
 export default async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -7,5 +9,10 @@ export default async function page({ params }: { params: { slug: string } }) {
     query: queryBlog,
     variables: { slug },
   });
-  return <div>{article.title}</div>;
+  return (
+    <GridLayout size="boxed" additional_class="">
+      {article.title}
+      <ArticleContent content={article.content} />
+    </GridLayout>
+  );
 }
