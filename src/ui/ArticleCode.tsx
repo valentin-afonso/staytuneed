@@ -1,4 +1,4 @@
-import ContentPostCode from "@/app/ContentPostCode";
+// import ContentPostCode from "@/app/ContentPostCode";
 type CodeProps = {
   language: string;
   code: string;

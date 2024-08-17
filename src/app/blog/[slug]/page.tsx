@@ -10,7 +10,7 @@ export default async function page({ params }: { params: { slug: string } }) {
     variables: { slug },
   });
   return (
-    <GridLayout size="boxed" additional_class="">
+    <GridLayout size="blog" additional_class="">
       {article.title}
       <ArticleContent content={article.content} />
     </GridLayout>

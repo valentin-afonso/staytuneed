@@ -9,12 +9,19 @@ export default function GridLayout({
   size,
   additional_class,
 }: GridLayoutType) {
-  const max_width =
-    size === "boxed"
-      ? "max-w-[1440px] px-4 md:px-11"
-      : "max-w-[1550px] px-0 md:px-11";
+  let layout_width = "max-w-[1176px]";
+  if (size === "boxed") {
+    layout_width = "max-w-[1176px]";
+  }
+  if (size === "blog") {
+    layout_width = "max-w-[840px]";
+  }
+  if (size === "fullwidth") {
+    layout_width = "max-w-[1440px]";
+  }
+
   return (
-    <div className={`${max_width} m-auto 2xl:px-0 ${additional_class}`}>
+    <div className={`${layout_width} m-auto 2xl:px-0 ${additional_class}`}>
       {children}
     </div>
   );
