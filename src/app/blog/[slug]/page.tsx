@@ -11,7 +11,7 @@ export default async function page({ params }: { params: { slug: string } }) {
   });
   return (
     <GridLayout size="blog" additional_class="">
-      {article.title}
+      <h1 className="text-4xl mb-4">{article.title}</h1>
       <ArticleContent content={article.content} />
     </GridLayout>
   );

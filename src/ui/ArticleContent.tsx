@@ -26,6 +26,7 @@ type ArticleContentProps = {
 };
 
 export default function ArticleContent({ content }: ArticleContentProps) {
+  /*
   const elements = content.value.document.children;
   const renderContent = (element: ContentElement) => {
     switch (element.type) {
@@ -55,26 +56,25 @@ export default function ArticleContent({ content }: ArticleContentProps) {
         return null;
     }
   };
+  */
   return (
-    <div>
+    <div className="structured_text">
       {/**{elements.map((element) => renderContent(element))} */}
-      <div>
-        <StructuredText
-          data={content}
-          customNodeRules={[
-            renderNodeRule(isCode, ({ node, key }) => {
-              return (
-                <SyntaxHighlight
-                  key={key}
-                  code={node.code}
-                  language={node.language}
-                  linesToBeHighlighted={node.highlight}
-                />
-              );
-            }),
-          ]}
-        />
-      </div>
+      <StructuredText
+        data={content}
+        customNodeRules={[
+          renderNodeRule(isCode, ({ node, key }) => {
+            return (
+              <SyntaxHighlight
+                key={key}
+                code={node.code}
+                language={node.language}
+                linesToBeHighlighted={node.highlight}
+              />
+            );
+          }),
+        ]}
+      />
     </div>
   );
 }
