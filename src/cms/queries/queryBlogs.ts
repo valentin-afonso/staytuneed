@@ -6,5 +6,10 @@ query Blogs {
     teaser
     title
     slug
+    readingTime
+    tags {
+      libelle
+      id
+    }
   }
 }`;
