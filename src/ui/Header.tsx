@@ -1,3 +1,14 @@
+import Logo from "@/ui/Logo";
+import MainNav from "@/ui/MainNav";
+import GridLayout from "@/ui/GridLayout";
+
 export default function Header() {
-  return <header>header</header>;
+  return (
+    <header className="">
+      <GridLayout size="boxed" additional_class="flex justify-between">
+        <Logo />
+        <MainNav />
+      </GridLayout>
+    </header>
+  );
 }
