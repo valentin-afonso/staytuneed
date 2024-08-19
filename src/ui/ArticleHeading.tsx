@@ -4,6 +4,6 @@ type HeadingProps = {
 };
 
 export default function ArticleHeading({ level, children }: HeadingProps) {
-  const Tag = `h${level}` as keyof JSX.IntrinsicElements;
-  return <Tag>{children}</Tag>;
+  // const TagHeading = `h${level}` as keyof JSX.IntrinsicElements;
+  return <h2>{children}</h2>;
 }
