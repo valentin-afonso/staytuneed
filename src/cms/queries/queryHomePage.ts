@@ -3,7 +3,21 @@ query Home {
   homePage {
     content {
       ... on BlogSliderRecord {
-        id
+        blogs {
+          title
+          teaser
+          slug
+          tags {
+            libelle
+            id
+          }
+        }
+      }
+      ... on TitleRecord {
+        title
+      }
+      ... on TextRecord {
+        text
       }
     }
     contentSecond {
