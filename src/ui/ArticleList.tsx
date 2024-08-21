@@ -10,7 +10,7 @@ export default async function ArticleList() {
   ));
   return (
     <div>
-      <ul className="flex gap-2">{listItems}</ul>
+      <div className="flex gap-2">{listItems}</div>
     </div>
   );
 }
