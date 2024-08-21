@@ -2,6 +2,7 @@ import GridLayout from "@/ui/GridLayout";
 import { performRequest } from "@/lib/datocms";
 import { queryLastArticle } from "@/cms/queries/queryLastArticles";
 import SliderArticles from "@/ui/SliderArticles";
+import TitleSecond from "@/ui/TitleSecond";
 
 export default async function SectionLastArticle() {
   const { lastArticle } = await performRequest({ query: queryLastArticle });
@@ -9,8 +10,8 @@ export default async function SectionLastArticle() {
   const title = lastArticle?.title;
   const articles = lastArticle?.article;
   return (
-    <GridLayout size="boxed" additional_class="">
-      <h2>{title}</h2>
+    <GridLayout size="boxed" additional_class="mb-32">
+      <TitleSecond>{title}</TitleSecond>
       <SliderArticles articles={articles} />
     </GridLayout>
   );

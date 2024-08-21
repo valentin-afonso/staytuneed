@@ -5,7 +5,7 @@ import Slogan from "@/ui/Slogan";
 
 export default function HeroSection({ title, slogan }: any) {
   return (
-    <GridLayout size="boxed" additional_class="">
+    <GridLayout size="boxed" additional_class="mb-32">
       <TitleDouble
         first={title.firstPart}
         second={title.secondPart}
