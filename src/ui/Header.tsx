@@ -5,7 +5,7 @@ import GridLayout from "@/ui/GridLayout";
 export default function Header() {
   return (
     <header className="">
-      <GridLayout size="boxed" additional_class="flex justify-between">
+      <GridLayout size="boxed" additional_class="flex justify-between py-2">
         <Logo />
         <MainNav />
       </GridLayout>
