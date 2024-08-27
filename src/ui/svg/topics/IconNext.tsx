@@ -10,7 +10,7 @@ export default function IconNext() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_61_37)">
+        <g clipPath="url(#clip0_61_37)">
           <rect width="50" height="50" fill="white" />
           <circle cx="25" cy="26" r="9" fill="white" />
           <mask
