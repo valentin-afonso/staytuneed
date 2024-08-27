@@ -8,11 +8,29 @@ import {
   DrawerClose,
 } from "@/components/ui/drawer";
 import DrawerSearch from "@/ui/DrawerSearch";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import IconClose from "@/ui/svg/IconClose";
 
 export default function SearchBar({ articles }: any) {
   const [open, setOpen] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const [filteredArticles, setFilteredArticles] = useState(articles);
+
+  useEffect(() => {
+    const filtered = articles.filter((article: any) => {
+      const searchLower = searchText.toLowerCase();
+      return (
+        article.title.toLowerCase().includes(searchLower) ||
+        article.teaser.toLowerCase().includes(searchLower) ||
+        article.tags.some((tag: any) =>
+          tag.libelle.toLowerCase().includes(searchLower)
+        )
+      );
+    });
+
+    setFilteredArticles(filtered);
+  }, [searchText, articles]);
+
   return (
     <Drawer dismissible={true} modal={false} handleOnly={true} open={open}>
       <DrawerTrigger asChild onClick={() => setOpen(true)}>
@@ -21,6 +39,8 @@ export default function SearchBar({ articles }: any) {
             type="text"
             placeholder="Tap something..."
             className="flex-grow py-2 px-4 focus:outline-none"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
           />
 
           <IconSearch />
@@ -33,7 +53,7 @@ export default function SearchBar({ articles }: any) {
         >
           <IconClose />
         </DrawerClose>
-        <DrawerSearch articles={articles} />
+        <DrawerSearch articles={filteredArticles} />
       </DrawerContent>
     </Drawer>
   );

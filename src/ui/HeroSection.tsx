@@ -1,6 +1,5 @@
 import TitleDouble from "@/ui/TitleDouble";
 import GridLayout from "@/ui/GridLayout";
-import SearchBar from "@/ui/SearchBar";
 import Slogan from "@/ui/Slogan";
 import BlocSearchBar from "@/ui/BlocSearchBar";
 
