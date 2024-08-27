@@ -1,9 +1,4 @@
-import IconFigma from "@/ui/svg/topics/IconFigma";
-import IconGithub from "@/ui/svg/topics/IconGithub";
-import IconJs from "@/ui/svg/topics/IconJs";
-import IconNext from "@/ui/svg/topics/IconNext";
-import IconReact from "@/ui/svg/topics/IconReact";
-import IconVercel from "@/ui/svg/topics/IconVercel";
+import Marquee from "@/ui/Marquee";
 
 export default function Slogan({ text }: any) {
   return (
@@ -15,27 +10,7 @@ export default function Slogan({ text }: any) {
           </p>
         ))}
       </div>
-
-      <ul className="flex gap-12">
-        <li>
-          <IconFigma />
-        </li>
-        <li>
-          <IconGithub />
-        </li>
-        <li>
-          <IconJs />
-        </li>
-        <li>
-          <IconNext />
-        </li>
-        <li>
-          <IconReact />
-        </li>
-        <li>
-          <IconVercel />
-        </li>
-      </ul>
+      <Marquee />
     </div>
   );
 }

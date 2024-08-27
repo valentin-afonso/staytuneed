@@ -9,10 +9,14 @@ import {
 } from "@/components/ui/carousel";
 
 export default function SliderArticles({ articles, slidePerView }: any) {
+  let class_slide_per_view = `lg:basis-1/3`;
+  if (slidePerView === "6") {
+    class_slide_per_view = "lg:basis-1/6";
+  }
   const article_slides = articles.map((article: any) => (
     <CarouselItem
       key={article.id}
-      className={`grid md:basis-1/2 lg:basis-1/${slidePerView} pl-8`}
+      className={`grid md:basis-1/2 ${class_slide_per_view} pl-8`}
     >
       <ArticleTeaser article={article} />
     </CarouselItem>
