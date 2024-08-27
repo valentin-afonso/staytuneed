@@ -6,13 +6,12 @@ import {
   DrawerContent,
   DrawerTrigger,
   DrawerClose,
-  DrawerFooter,
-  DrawerOverlay,
 } from "@/components/ui/drawer";
 import DrawerSearch from "@/ui/DrawerSearch";
 import { useState } from "react";
+import IconClose from "@/ui/svg/IconClose";
 
-export default function SearchBar() {
+export default function SearchBar({ articles }: any) {
   const [open, setOpen] = useState(false);
   return (
     <Drawer dismissible={true} modal={false} handleOnly={true} open={open}>
@@ -27,11 +26,14 @@ export default function SearchBar() {
           <IconSearch />
         </div>
       </DrawerTrigger>
-      <DrawerContent>
-        <DrawerSearch />
-        <DrawerFooter>
-          <DrawerClose onClick={() => setOpen(false)}>Cancel</DrawerClose>
-        </DrawerFooter>
+      <DrawerContent className="px-10 py-4">
+        <DrawerClose
+          onClick={() => setOpen(false)}
+          className="flex justify-end"
+        >
+          <IconClose />
+        </DrawerClose>
+        <DrawerSearch articles={articles} />
       </DrawerContent>
     </Drawer>
   );

@@ -2,6 +2,7 @@ import TitleDouble from "@/ui/TitleDouble";
 import GridLayout from "@/ui/GridLayout";
 import SearchBar from "@/ui/SearchBar";
 import Slogan from "@/ui/Slogan";
+import BlocSearchBar from "@/ui/BlocSearchBar";
 
 export default function HeroSection({ title, slogan }: any) {
   return (
@@ -12,7 +13,7 @@ export default function HeroSection({ title, slogan }: any) {
         level="1"
         align="center"
       />
-      <SearchBar />
+      <BlocSearchBar />
       <Slogan text={slogan} />
     </GridLayout>
   );

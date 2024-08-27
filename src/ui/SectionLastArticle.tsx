@@ -12,7 +12,7 @@ export default async function SectionLastArticle() {
   return (
     <GridLayout size="boxed" additional_class="mb-32">
       <TitleSecond>{title}</TitleSecond>
-      <SliderArticles articles={articles} />
+      <SliderArticles articles={articles} slidePerView="3" />
     </GridLayout>
   );
 }
