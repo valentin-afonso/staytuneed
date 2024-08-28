@@ -1,16 +1,33 @@
-import { performRequest } from "@/lib/datocms";
-import { queryBlogs } from "@/cms/queries/queryBlogs";
-import ArticleTeaser from "@/ui/ArticleTeaser";
+"use client";
 
-export default async function ArticleList() {
-  const { allArticles } = await performRequest({ query: queryBlogs });
+import { useState, useEffect } from "react";
+import Filters from "@/ui/Filters";
+import DynamicListArticles from "@/ui/DynamicListArticles";
 
-  const listItems = allArticles.map((article: any) => (
-    <ArticleTeaser key={article.id} article={article} />
-  ));
+export default function ArticleList({ articles, tags }: any) {
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [filteredArticles, setFilteredArticles] = useState(articles);
+
+  useEffect(() => {
+    const filtered = articles.filter(
+      (article: any) =>
+        selectedTags.length === 0 ||
+        article.tags.some((tag: any) =>
+          selectedTags.includes(tag.libelle.toLowerCase())
+        )
+    );
+
+    setFilteredArticles(filtered);
+  }, [selectedTags, articles]);
+
   return (
-    <div>
-      <div className="flex gap-2">{listItems}</div>
-    </div>
+    <>
+      <Filters
+        tags={tags}
+        selectedTags={selectedTags}
+        setSelectedTags={setSelectedTags}
+      />
+      <DynamicListArticles articles={filteredArticles} />
+    </>
   );
 }

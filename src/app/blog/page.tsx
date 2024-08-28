@@ -1,9 +1,11 @@
-import ArticleList from "@/ui/ArticleList";
+import BlocSearchBar from "@/ui/BlocSearchBar";
+import BlocArticlesList from "@/ui/BlocArticlesList";
 
 export default function page() {
   return (
     <div>
-      <ArticleList />
+      <BlocSearchBar />
+      <BlocArticlesList />
     </div>
   );
 }
