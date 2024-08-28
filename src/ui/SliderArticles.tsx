@@ -13,6 +13,9 @@ export default function SliderArticles({ articles, slidePerView }: any) {
   if (slidePerView === "6") {
     class_slide_per_view = "lg:basis-1/6";
   }
+  if (slidePerView === "auto") {
+    class_slide_per_view = "";
+  }
   const article_slides = articles.map((article: any) => (
     <CarouselItem
       key={article.id}
@@ -26,7 +29,7 @@ export default function SliderArticles({ articles, slidePerView }: any) {
       opts={{
         align: "start",
       }}
-      className="w-full"
+      className="w-full min-h-[420px]"
     >
       <CarouselContent className="-ml-8">{article_slides}</CarouselContent>
       <CarouselPrevious />

@@ -13,7 +13,7 @@ export default function DrawerSearch({ articles }: any) {
         <DrawerDescription>
           Find tag or type any keyword for see related articles
         </DrawerDescription>
-        <SliderArticles articles={articles} slidePerView="6" />
+        <SliderArticles articles={articles} slidePerView="3" />
       </DrawerHeader>
     </>
   );

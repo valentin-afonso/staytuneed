@@ -37,8 +37,7 @@ export default function SearchBar({ articles }: any) {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         drawerContentRef.current &&
-        !drawerContentRef.current.contains(event.target as Node) &&
-        !inputRef.current?.contains(event.target as Node)
+        !drawerContentRef.current.contains(event.target as Node)
       ) {
         setOpen(false);
       }
@@ -58,27 +57,22 @@ export default function SearchBar({ articles }: any) {
   }, [open]);
 
   useEffect(() => {
-    if (open && inputRef.current) {
-      // Utiliser un délai pour laisser le temps au Drawer de s'ouvrir
-      setTimeout(() => {
-        inputRef.current?.focus();
-      }, 100); // 100ms est généralement suffisant
+    if (open) {
+      const timeoutId = setTimeout(() => {
+        console.log("Setting focus to input");
+        if (inputRef.current) {
+          inputRef.current.focus();
+        }
+      }, 300);
+      return () => clearTimeout(timeoutId);
     }
   }, [open]);
 
   return (
-    <Drawer dismissible={true} modal={false} handleOnly={true} open={open}>
+    <Drawer open={open}>
       <DrawerTrigger asChild onClick={() => setOpen(true)}>
-        <div className=" flex justify-between items-center mt-12 mb-28 shadow-light border-gray-border rounded-full pr-4">
-          <input
-            type="text"
-            placeholder="Tap something..."
-            className="flex-grow py-2 px-4 focus:outline-none"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            ref={inputRef}
-          />
-
+        <div className=" flex justify-between items-center mt-12 mb-28 shadow-light border-gray-border rounded-full py-2 px-4 pr-4 cursor-pointer">
+          <p className="text-gray-400">Find a article...</p>
           <IconSearch />
         </div>
       </DrawerTrigger>
@@ -89,7 +83,21 @@ export default function SearchBar({ articles }: any) {
         >
           <IconClose />
         </DrawerClose>
-        <DrawerSearch articles={filteredArticles} />
+        <div className="max-w-[1000px] mx-auto">
+          <div className=" flex justify-between items-center my-4 shadow-light border-gray-border rounded-full pr-4">
+            <input
+              type="text"
+              placeholder="Tap something..."
+              className="flex-grow py-2 px-4 focus:outline-none "
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              ref={inputRef}
+            />
+            <IconSearch />
+          </div>
+
+          <DrawerSearch articles={filteredArticles} />
+        </div>
       </DrawerContent>
     </Drawer>
   );
