@@ -4,6 +4,7 @@ query Blog($slug: String!) {
     id
     slug
     title
+    _publishedAt
     tags {
       libelle
       id
