@@ -1,11 +1,12 @@
 import BlocSearchBar from "@/ui/BlocSearchBar";
 import BlocArticlesList from "@/ui/BlocArticlesList";
+import GridLayout from "@/ui/GridLayout";
 
 export default function page() {
   return (
-    <div>
+    <GridLayout size="boxed" additional_class="">
       <BlocSearchBar />
       <BlocArticlesList />
-    </div>
+    </GridLayout>
   );
 }

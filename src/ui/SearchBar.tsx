@@ -10,6 +10,13 @@ import {
 import DrawerSearch from "@/ui/DrawerSearch";
 import { useState, useEffect, useRef } from "react";
 import IconClose from "@/ui/svg/IconClose";
+import {
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer";
+import SliderArticles from "@/ui/SliderArticles";
+import GridLayout from "@/ui/GridLayout";
 
 export default function SearchBar({ articles }: any) {
   const [open, setOpen] = useState(false);
@@ -71,33 +78,40 @@ export default function SearchBar({ articles }: any) {
   return (
     <Drawer open={open}>
       <DrawerTrigger asChild onClick={() => setOpen(true)}>
-        <div className=" flex justify-between items-center mt-12 mb-28 shadow-light border-gray-border rounded-full py-2 px-4 pr-4 cursor-pointer">
+        <div className=" flex justify-between items-center mt-12 mb-28 mx-auto w-[576px] max-w-full shadow-light border-gray-border rounded-full py-2 px-4 pr-4 cursor-pointer">
           <p className="text-gray-400">Find a article...</p>
           <IconSearch />
         </div>
       </DrawerTrigger>
-      <DrawerContent className="px-10 py-4" ref={drawerContentRef}>
+      <DrawerContent className="px-20 py-4" ref={drawerContentRef}>
         <DrawerClose
           onClick={() => setOpen(false)}
           className="flex justify-end"
         >
           <IconClose />
         </DrawerClose>
-        <div className="max-w-[1000px] mx-auto">
-          <div className=" flex justify-between items-center my-4 shadow-light border-gray-border rounded-full pr-4">
-            <input
-              type="text"
-              placeholder="Tap something..."
-              className="flex-grow py-2 px-4 focus:outline-none "
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-              ref={inputRef}
-            />
-            <IconSearch />
-          </div>
 
-          <DrawerSearch articles={filteredArticles} />
-        </div>
+        <DrawerHeader>
+          <GridLayout size="boxed" additional_class="w-full">
+            <div className=" flex justify-between items-center my-4 shadow-light border-gray-border rounded-full pr-4">
+              <input
+                type="text"
+                placeholder="Tap something..."
+                className="flex-grow py-2 px-4 focus:outline-none "
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                ref={inputRef}
+              />
+              <IconSearch />
+            </div>
+            <DrawerTitle>Find your article</DrawerTitle>
+            <DrawerDescription>
+              Find tag or type any keyword for see related articles
+            </DrawerDescription>
+          </GridLayout>
+        </DrawerHeader>
+
+        <DrawerSearch articles={filteredArticles} />
       </DrawerContent>
     </Drawer>
   );
