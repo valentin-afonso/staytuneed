@@ -13,8 +13,8 @@ export default async function page({ params }: { params: { slug: string } }) {
   });
   return (
     <GridLayout size="blog" additional_class="">
-      <h1 className="text-4xl mb-4">{article.title}</h1>
-      <div className="flex justify-between mb-4">
+      <h1 className="text-4xl mb-4 font-semibold">{article.title}</h1>
+      <div className="flex justify-between mb-4 pb-4 border-b border-b-gray-200">
         <Tags tags={article.tags} />
         <ReadingTime time={article.readingTime} />
       </div>

@@ -12,7 +12,7 @@ export default function SyntaxHighlight({
     <div>
       <Highlight theme={themes.dracula} code={code} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre style={style} className="p-4 my-4">
+          <pre style={style} className="p-4 my-4 text-xs rounded">
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line })}>
                 {line.map((token, key) => (

@@ -70,6 +70,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                 code={node.code}
                 language={node.language}
                 linesToBeHighlighted={node.highlight}
+                className="text-xs"
               />
             );
           }),
