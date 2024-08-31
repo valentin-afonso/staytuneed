@@ -1,4 +1,5 @@
 import ArticleTeaser from "./ArticleTeaser";
+import NoArticle from "@/ui/NoArticle";
 
 import {
   Carousel,
@@ -16,6 +17,11 @@ export default function SliderArticles({ articles, slidePerView }: any) {
   if (slidePerView === "auto") {
     class_slide_per_view = "";
   }
+  if (articles.length === 0)
+    return (
+      <NoArticle text="It’s a bit quiet here now, but articles will be up soon!" />
+    );
+
   const article_slides = articles.map((article: any) => (
     <CarouselItem
       key={article.id}
@@ -31,7 +37,9 @@ export default function SliderArticles({ articles, slidePerView }: any) {
       }}
       className="w-full min-h-[420px]"
     >
-      <CarouselContent className="-ml-8 py-4">{article_slides}</CarouselContent>
+      <CarouselContent className="-ml-8 py-4 px-1">
+        {article_slides}
+      </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
