@@ -129,6 +129,7 @@
 }
 .structured_text p:first-child {
   color: #6d6d6d;
+  font-size: 0.875rem;
 }
 .structured_text h2 {
   font-weight: 500;
