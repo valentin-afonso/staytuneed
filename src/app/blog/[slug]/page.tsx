@@ -5,6 +5,7 @@ import ArticleContent from "@/ui/ArticleContent";
 import Tags from "@/ui/Tags";
 import ReadingTime from "@/ui/ReadingTime";
 import DateArticle from "@/ui/DateArticle";
+import SectionRelatedArticles from "@/ui/SectionRelatedArticles";
 
 export default async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -24,6 +25,7 @@ export default async function page({ params }: { params: { slug: string } }) {
       </div>
 
       <ArticleContent content={article.content} />
+      <SectionRelatedArticles tags={article.tags} />
     </GridLayout>
   );
 }
