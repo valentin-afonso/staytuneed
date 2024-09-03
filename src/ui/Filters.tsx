@@ -19,12 +19,12 @@ export default function Filters({ tags, selectedTags, setSelectedTags }: any) {
   const list_tags = tags.map((tag: any) => (
     <CarouselItem
       key={tag.id}
-      className={`grid md:basis-1/2 lg:basis-auto pl-4`}
+      className={`grid md:basis-1/2 lg:basis-auto pl-3`}
     >
       <ToggleGroupItem
         value={tag.libelle}
         onClick={() => handleToggle(tag.libelle)}
-        className="whitespace-nowrap"
+        className="whitespace-nowrap text-xs"
       >
         {tag.libelle}
       </ToggleGroupItem>
@@ -36,9 +36,9 @@ export default function Filters({ tags, selectedTags, setSelectedTags }: any) {
         opts={{
           align: "start",
         }}
-        className="w-full min-h-[40px]"
+        className="w-full min-h-[40px] container_filters"
       >
-        <CarouselContent className="-ml-4 py-4 px-1">
+        <CarouselContent className="-ml-3 py-4 px-1">
           {list_tags}
         </CarouselContent>
         <CarouselPrevious />

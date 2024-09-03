@@ -10,5 +10,5 @@ export default function DynamicListArticles({ articles }: any) {
     return (
       <NoArticle text="It’s a bit quiet here now, but articles will be up soon!" />
     );
-  return <div className="grid grid-cols-4 gap-2">{listItems}</div>;
+  return <div className="grid grid-cols-4 gap-x-2 gap-y-4">{listItems}</div>;
 }

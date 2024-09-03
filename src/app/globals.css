@@ -98,7 +98,19 @@
   height: 100%;
   width: 50%;
   z-index: 1;
+  pointer-events: none;
 }
+.container_filters::before,
+.container_filters::after {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 5rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.container_filters::before,
 .content_marquee::before {
   content: "";
   left: 0;
@@ -109,6 +121,7 @@
     rgba(255, 255, 255, 1) 83%
   );
 }
+.container_filters::after,
 .content_marquee::after {
   content: "";
   right: 0;
@@ -147,4 +160,7 @@
 }
 .structured_text ul li:not(:last-child) {
   margin-bottom: 1rem;
+}
+body[data-scroll-locked] {
+  padding-right: inherit !important;
 }
