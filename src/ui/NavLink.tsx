@@ -13,7 +13,7 @@ export default function NavLink({ name, href }: any) {
     <>
       <Link
         href={`/${href}`}
-        className={`px-0 py-1 inline-block text-sm hover:text-black select-none transition-all ${linkClassName}`}
+        className={`px-0 py-1 inline-block text-sm font-medium hover:text-black select-none transition-all ${linkClassName}`}
       >
         {name}
       </Link>
