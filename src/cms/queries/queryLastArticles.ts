@@ -12,6 +12,13 @@ query LastArticle {
         libelle
         id
       }
+      image {
+        width
+        height
+        alt(locale: fr)
+        blurhash
+        url
+      }
     }
   }
 }`;

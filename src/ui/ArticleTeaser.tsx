@@ -1,14 +1,23 @@
 import Link from "next/link";
 import Tags from "@/ui/Tags";
 import ReadingTime from "@/ui/ReadingTime";
+import Image from "next/image";
 
 export default function ArticleTeaser({ article }: any) {
+  const image = article?.image;
+
   return (
     <Link
       href={`/blog/${article.slug}`}
       className="relative grid  grid-rows-teaser gap-4 w-[276px] p-2 rounded-xl shadow-light"
     >
-      <div className="w-full h-[145px] bg-slate-600 rounded "></div>
+      <Image
+        src={image?.url}
+        width="258"
+        height="145"
+        alt={image?.alt}
+        className="rounded"
+      />
       <ReadingTime time={article.readingTime} />
       <div>
         <h2 className="font-bold text-lg mb-3">{article.title}</h2>

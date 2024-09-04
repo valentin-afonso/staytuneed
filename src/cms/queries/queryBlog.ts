@@ -9,6 +9,13 @@ query Blog($slug: String!) {
       libelle
       id
     }
+    image {
+      width
+      height
+      alt(locale: fr)
+      blurhash
+      url
+    }
     readingTime
     content {
       blocks

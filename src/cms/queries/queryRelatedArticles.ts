@@ -7,6 +7,13 @@ query MyQuery($tags: LinksFilter) {
       libelle
       id
     }
+    image {
+      width
+      height
+      alt(locale: fr)
+      blurhash
+      url
+    }
     slug
     readingTime
   }

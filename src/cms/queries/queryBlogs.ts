@@ -11,5 +11,12 @@ query Blogs {
       libelle
       id
     }
+    image {
+      width
+      height
+      alt(locale: fr)
+      blurhash
+      url
+    }
   }
 }`;
