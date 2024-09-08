@@ -2,6 +2,7 @@ export const queryBlogs = `
 query Blogs {
   allArticles {
     _createdAt
+    _updatedAt
     id
     teaser
     title

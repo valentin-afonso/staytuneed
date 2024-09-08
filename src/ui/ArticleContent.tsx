@@ -58,7 +58,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
   };
   */
   return (
-    <div className="structured_text">
+    <div className="structured_text mb-20">
       {/**{elements.map((element) => renderContent(element))} */}
       <StructuredText
         data={content}
