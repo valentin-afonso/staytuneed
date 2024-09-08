@@ -2,6 +2,7 @@ import { performRequest } from "@/lib/datocms";
 import { queryBlog } from "@/cms/queries/queryBlog";
 import GridLayout from "@/ui/GridLayout";
 import ArticleContent from "@/ui/ArticleContent";
+import Author from "@/ui/Author";
 import Tags from "@/ui/Tags";
 import ReadingTime from "@/ui/ReadingTime";
 import DateArticle from "@/ui/DateArticle";
@@ -35,8 +36,8 @@ export default async function page({ params }: { params: { slug: string } }) {
         </div>
         <Tags tags={article.tags} />
       </div>
-
       <ArticleContent content={article.content} />
+      <Author author={article.author} />
       <SectionRelatedArticles tags={article.tags} />
     </GridLayout>
   );

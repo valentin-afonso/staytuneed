@@ -23,5 +23,16 @@ query Blog($slug: String!) {
       links
       value
     }
+    author {
+      firstname
+      lastname
+      social
+      socialUrl
+      pictureProfil {
+        url
+        width
+        height
+      }
+    }
   }
 }`;
