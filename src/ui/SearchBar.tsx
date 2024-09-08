@@ -15,30 +15,24 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import SliderArticles from "@/ui/SliderArticles";
 import GridLayout from "@/ui/GridLayout";
 
 export default function SearchBar({ articles }: any) {
   const [open, setOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const [filteredArticles, setFilteredArticles] = useState(articles);
   const inputRef = useRef<HTMLInputElement>(null);
   const drawerContentRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const filtered = articles.filter((article: any) => {
-      const searchLower = searchText.toLowerCase();
-      return (
-        article.title.toLowerCase().includes(searchLower) ||
-        article.teaser.toLowerCase().includes(searchLower) ||
-        article.tags.some((tag: any) =>
-          tag.libelle.toLowerCase().includes(searchLower)
-        )
-      );
-    });
-
-    setFilteredArticles(filtered);
-  }, [searchText, articles]);
+  const filteredArticles = articles.filter((article: any) => {
+    const searchLower = searchText.toLowerCase();
+    return (
+      article.title.toLowerCase().includes(searchLower) ||
+      article.teaser.toLowerCase().includes(searchLower) ||
+      article.tags.some((tag: any) =>
+        tag.libelle.toLowerCase().includes(searchLower)
+      )
+    );
+  });
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -51,13 +45,10 @@ export default function SearchBar({ articles }: any) {
     };
 
     if (open) {
-      // Ajouter l'écouteur d'événement seulement quand le Drawer est ouvert
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
     }
-
-    // Nettoyer l'écouteur quand le Drawer se ferme
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -66,7 +57,6 @@ export default function SearchBar({ articles }: any) {
   useEffect(() => {
     if (open) {
       const timeoutId = setTimeout(() => {
-        console.log("Setting focus to input");
         if (inputRef.current) {
           inputRef.current.focus();
         }
