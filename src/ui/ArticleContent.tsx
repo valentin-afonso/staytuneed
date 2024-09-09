@@ -3,8 +3,9 @@ import ArticleHeading from "./ArticleHeading";
 import ArticleParagraph from "./ArticleParagraph";
 
 import { renderNodeRule, StructuredText } from "react-datocms";
-import { isHeading, isCode } from "datocms-structured-text-utils";
+import { isHeading, isCode, isLink } from "datocms-structured-text-utils";
 import SyntaxHighlight from "@/app/SyntaxHighlight";
+import IconLink from "@/ui/svg/IconLink";
 
 type ContentElement = {
   type: string;
@@ -57,6 +58,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
     }
   };
   */
+  console.log(content);
   return (
     <div className="structured_text mb-20">
       {/**{elements.map((element) => renderContent(element))} */}
@@ -72,6 +74,27 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                 linesToBeHighlighted={node.highlight}
                 className="text-xs"
               />
+            );
+          }),
+          renderNodeRule(isLink, ({ node, key, children }) => {
+            console.log(node.meta);
+            const targetBlank = node.meta?.some(
+              (metaEntry) =>
+                metaEntry.id === "target" && metaEntry.value === "_blank"
+            );
+            const target = targetBlank ? "_blank" : "_self";
+            const rel = targetBlank ? "noopener noreferrer" : undefined;
+            return (
+              <a
+                key={key}
+                href={node.url}
+                target={target}
+                rel={rel}
+                className="inline-flex items-center gap-2 w-max pl-1 text-blue-500 hover:underline"
+              >
+                <IconLink />
+                {children}
+              </a>
             );
           }),
         ]}

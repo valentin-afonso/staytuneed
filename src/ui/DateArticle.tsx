@@ -5,7 +5,7 @@ export default function DateArticle({ date, updatedAt }: any) {
   const formattedUpdatedAt = useFormattedDate(updatedAt);
   return (
     <p className="text-gray-light text-xs flex items-center gap-2">
-      <span>created on {formattedDate}</span> •
+      <span>created at {formattedDate}</span> •
       <span>updated at {formattedUpdatedAt}</span>
     </p>
   );
