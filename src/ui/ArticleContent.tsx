@@ -4,8 +4,10 @@ import ArticleParagraph from "./ArticleParagraph";
 
 import { renderNodeRule, StructuredText } from "react-datocms";
 import { isHeading, isCode, isLink } from "datocms-structured-text-utils";
+import { render as toPlainText } from "datocms-structured-text-to-plain-text";
 import SyntaxHighlight from "@/app/SyntaxHighlight";
 import IconLink from "@/ui/svg/IconLink";
+import IconLinkedTitle from "@/ui/svg/IconLinkedTitle";
 
 type ContentElement = {
   type: string;
@@ -27,44 +29,49 @@ type ArticleContentProps = {
 };
 
 export default function ArticleContent({ content }: ArticleContentProps) {
-  /*
-  const elements = content.value.document.children;
-  const renderContent = (element: ContentElement) => {
-    switch (element.type) {
-      case "paragraph":
-        return (
-          <ArticleParagraph key={Math.random()}>
-            {element.children.map((child) => child.value).join("")}
-          </ArticleParagraph>
-        );
-      case "heading":
-        return (
-          <ArticleHeading key={Math.random()} level={element.level || 1}>
-            {element.children.map((child) => child.value).join("")}
-          </ArticleHeading>
-        );
-      case "code":
-        return (
-          <ArticleCode
-            key={Math.random()}
-            language={element.language || ""}
-            code={element.code || ""}
-          >
-            {element.code || ""}
-          </ArticleCode>
-        );
-      default:
-        return null;
-    }
-  };
-  */
   console.log(content);
   return (
     <div className="structured_text mb-20">
-      {/**{elements.map((element) => renderContent(element))} */}
       <StructuredText
         data={content}
         customNodeRules={[
+          renderNodeRule(isHeading, ({ node, children, key }) => {
+            if (!node) return null;
+            const anchor =
+              node !== null
+                ? toPlainText(node)
+                    ?.toLowerCase()
+                    .replace(/ /g, "-")
+                    .replace(/[^\w-]+/g, "")
+                : "";
+            const content = (
+              <>
+                {children}
+                <a href={`#${anchor}`}>
+                  <IconLinkedTitle />
+                </a>
+              </>
+            );
+            const classtitle = "flex items-center gap-4";
+            if (node.level === 1)
+              return (
+                <h1 className={`${classtitle}`} id={anchor}>
+                  {content}
+                </h1>
+              );
+            if (node.level === 2)
+              return (
+                <h2 className={`${classtitle}`} id={anchor}>
+                  {content}
+                </h2>
+              );
+            if (node.level === 3)
+              return (
+                <h3 className={`${classtitle}`} id={anchor}>
+                  {content}
+                </h3>
+              );
+          }),
           renderNodeRule(isCode, ({ node, key }) => {
             return (
               <SyntaxHighlight
