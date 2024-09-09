@@ -8,6 +8,7 @@ import ReadingTime from "@/ui/ReadingTime";
 import DateArticle from "@/ui/DateArticle";
 import SectionRelatedArticles from "@/ui/SectionRelatedArticles";
 import Image from "next/image";
+import BlocBreadcrumb from "@/ui/BlocBreadcrumb";
 
 export default async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -16,8 +17,14 @@ export default async function page({ params }: { params: { slug: string } }) {
     variables: { slug },
   });
   const image = article?.image;
+  const three = [
+    { url: "/", title: "Home" },
+    { url: "/blog", title: "Blog" },
+    { url: `/blog/${slug}`, title: article.title },
+  ];
   return (
     <GridLayout size="blog" additional_class="">
+      <BlocBreadcrumb items={three} />
       <Image
         src={image?.url}
         width={image?.width}
