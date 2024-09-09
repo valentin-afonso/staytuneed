@@ -9,6 +9,7 @@ import DateArticle from "@/ui/DateArticle";
 import SectionRelatedArticles from "@/ui/SectionRelatedArticles";
 import Image from "next/image";
 import BlocBreadcrumb from "@/ui/BlocBreadcrumb";
+import { Toaster, toast } from "sonner";
 
 export default async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -46,6 +47,7 @@ export default async function page({ params }: { params: { slug: string } }) {
       <ArticleContent content={article.content} />
       <Author author={article.author} />
       <SectionRelatedArticles tags={article.tags} />
+      <Toaster />
     </GridLayout>
   );
 }
