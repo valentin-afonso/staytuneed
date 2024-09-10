@@ -9,7 +9,8 @@ import DateArticle from "@/ui/DateArticle";
 import SectionRelatedArticles from "@/ui/SectionRelatedArticles";
 import Image from "next/image";
 import BlocBreadcrumb from "@/ui/BlocBreadcrumb";
-import { Toaster, toast } from "sonner";
+import Summary from "@/ui/Summary";
+import { Toaster } from "sonner";
 
 export default async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -25,6 +26,7 @@ export default async function page({ params }: { params: { slug: string } }) {
   ];
   return (
     <GridLayout size="blog" additional_class="">
+      <Summary content={article.content} />
       <BlocBreadcrumb items={three} />
       <Image
         src={image?.url}

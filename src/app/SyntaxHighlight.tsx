@@ -22,7 +22,7 @@ export default function SyntaxHighlight({
   return (
     <div className="relative">
       <div
-        className="absolute right-4 top-4 cursor-pointer"
+        className="absolute right-4 top-4 cursor-pointer opacity-65 hover:opacity-100 transition-opacity"
         onClick={handleCopy}
       >
         <IconCopyPast />
@@ -30,7 +30,7 @@ export default function SyntaxHighlight({
 
       <Highlight theme={themes.dracula} code={code} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre style={style} className="p-4 my-4 text-xs rounded">
+          <pre style={style} className="p-4 pb-8 my-4 text-xs rounded">
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line })}>
                 {line.map((token, key) => (

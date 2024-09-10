@@ -176,3 +176,6 @@ mark {
 body[data-scroll-locked] {
   padding-right: inherit !important;
 }
+.summary {
+  max-width: calc((100vw - 840px) / 2);
+}
