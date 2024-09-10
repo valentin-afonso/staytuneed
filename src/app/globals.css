@@ -90,7 +90,10 @@
     transform: translateX(0%);
   }
 }
-
+::selection {
+  color: black;
+  background: #5300ff0a;
+}
 .content_marquee::before,
 .content_marquee::after {
   position: absolute;

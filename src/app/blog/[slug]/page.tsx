@@ -11,6 +11,7 @@ import Image from "next/image";
 import BlocBreadcrumb from "@/ui/BlocBreadcrumb";
 import Summary from "@/ui/Summary";
 import { Toaster } from "sonner";
+import SectionArticlesSameAuthor from "@/ui/SectionArticlesSameAuthor";
 
 export default async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -24,6 +25,7 @@ export default async function page({ params }: { params: { slug: string } }) {
     { url: "/blog", title: "Blog" },
     { url: `/blog/${slug}`, title: article.title },
   ];
+
   return (
     <GridLayout size="blog" additional_class="">
       <Summary content={article.content} />
@@ -48,6 +50,9 @@ export default async function page({ params }: { params: { slug: string } }) {
       </div>
       <ArticleContent content={article.content} />
       <Author author={article.author} />
+      {article.author && (
+        <SectionArticlesSameAuthor id_author={article.author.id} />
+      )}
       <SectionRelatedArticles tags={article.tags} />
       <Toaster />
     </GridLayout>

@@ -24,6 +24,7 @@ query Blog($slug: String!) {
       value
     }
     author {
+      id
       firstname
       lastname
       social
