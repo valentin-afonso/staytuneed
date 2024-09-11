@@ -1,7 +1,7 @@
 import ArticleTeaser from "@/ui/ArticleTeaser";
 import NoArticle from "@/ui/NoArticle";
 
-export default function DynamicListArticles({ articles }: any) {
+export default function DynamicListArticles({ articles, columns }: any) {
   const listItems = articles.map((article: any) => (
     <ArticleTeaser key={article.id} article={article} />
   ));
@@ -9,5 +9,5 @@ export default function DynamicListArticles({ articles }: any) {
     return (
       <NoArticle text="It’s a bit quiet here now, but articles will be up soon!" />
     );
-  return <div className="grid grid-cols-4 gap-x-2 gap-y-4">{listItems}</div>;
+  return <div className={`grid ${columns} gap-x-2 gap-y-4`}>{listItems}</div>;
 }

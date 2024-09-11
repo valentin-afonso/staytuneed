@@ -1,6 +1,6 @@
 export const queryArticlesSameAuthor = `
 query MyQuery($eq: ItemId) {
-  allArticles(filter: {author: {eq: $eq}}) {
+  allArticles(filter: {author: {eq: $eq}}, first: "2") {
    title
     teaser
     tags {

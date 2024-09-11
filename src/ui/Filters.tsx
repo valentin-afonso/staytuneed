@@ -24,7 +24,7 @@ export default function Filters({ tags, selectedTags, setSelectedTags }: any) {
       <ToggleGroupItem
         value={tag.libelle}
         onClick={() => handleToggle(tag.libelle)}
-        className="whitespace-nowrap text-xs"
+        className="whitespace-nowrap text-sm"
       >
         {tag.libelle}
       </ToggleGroupItem>
