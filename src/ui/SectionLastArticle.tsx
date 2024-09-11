@@ -5,14 +5,12 @@ import SliderArticles from "@/ui/SliderArticles";
 import TitleSecond from "@/ui/TitleSecond";
 
 export default async function SectionLastArticle() {
-  const { lastArticle } = await performRequest({ query: queryLastArticle });
-  if (!lastArticle) return <div>...</div>;
-  const title = lastArticle?.title;
-  const articles = lastArticle?.article;
+  const { allArticles } = await performRequest({ query: queryLastArticle });
+  if (!allArticles) return <div>...</div>;
   return (
     <GridLayout size="boxed" additional_class="mb-32">
-      <TitleSecond>{title}</TitleSecond>
-      <SliderArticles articles={articles} slidePerView="3" />
+      <TitleSecond>Our last articles</TitleSecond>
+      <SliderArticles articles={allArticles} slidePerView="3" />
     </GridLayout>
   );
 }

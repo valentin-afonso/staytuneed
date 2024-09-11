@@ -1,8 +1,6 @@
 export const queryLastArticle = `
 query LastArticle {
-  lastArticle {
-    title
-    article {
+  allArticles(orderBy: _createdAt_DESC, first: "8") {
       id
       teaser
       title
@@ -19,6 +17,6 @@ query LastArticle {
         blurhash
         url
       }
-    }
+    
   }
 }`;
