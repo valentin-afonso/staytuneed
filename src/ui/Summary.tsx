@@ -1,4 +1,7 @@
+"use client";
+
 import { selectAll } from "unist-util-select";
+import { useEffect, useState } from "react";
 interface Heading {
   text: string;
   level: number;
@@ -20,17 +23,71 @@ export default function Summary({ content }: any) {
     return { text, level, id };
   });
 
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculer la progression du scroll
+      const totalScrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const currentScroll = window.scrollY;
+      const scrollPercentage = (currentScroll / totalScrollHeight) * 100;
+      setScrollProgress(scrollPercentage);
+
+      // Gérer l'activation des titres dans le sommaire
+      const headingElements = headings.map((heading) =>
+        document.getElementById(heading.id)
+      );
+
+      headingElements.forEach((headingEl) => {
+        if (headingEl) {
+          const rect = headingEl.getBoundingClientRect();
+          if (
+            rect.top <= window.innerHeight / 3 &&
+            rect.bottom >= window.innerHeight / 3
+          ) {
+            setActiveId(headingEl.id);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [headings]);
+
   return (
     <>
-      <ul className="summary fixed left-8 flex flex-col gap-4 pr-14">
-        {headings.map((heading) => (
-          <li key={heading.id} className={`level-${heading.level}`}>
-            <a href={`#${heading.id}`} className="text-gray-light">
-              {heading.text}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="fixed left-5 top-0 bottom-0 flex items-center pr-6">
+        {/* Progress bar */}
+        <div className="relative h-20 w-1 rounded-full bg-gray-200">
+          <div
+            className="absolute top-0 left-0 w-full rounded-full bg-black"
+            style={{ height: `${scrollProgress}%` }}
+          />
+        </div>
+
+        {/* Summary */}
+        <ul className="summary flex flex-col gap-2 pl-5">
+          {headings.map((heading) => (
+            <li key={heading.id} className={`level-${heading.level}`}>
+              <a
+                href={`#${heading.id}`}
+                className={`inline-block text-xs leading-normal ${
+                  activeId === heading.id
+                    ? "text-black font-bold"
+                    : "text-gray-light"
+                }`}
+              >
+                {heading.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
