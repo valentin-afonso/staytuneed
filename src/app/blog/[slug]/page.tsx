@@ -35,7 +35,7 @@ export default async function page({ params }: { params: { slug: string } }) {
         width={image?.width}
         height={image?.height}
         alt={image?.alt}
-        className="rounded mb-4"
+        className="rounded mb-4 shadow-lg"
       />
       <h1 className="text-4xl mb-4 font-semibold">{article.title}</h1>
       <div className="flex flex-col gap-4 mb-4 pb-4 border-b border-b-gray-200">
