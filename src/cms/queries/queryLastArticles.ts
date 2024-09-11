@@ -14,7 +14,7 @@ query LastArticle {
         width
         height
         alt(locale: fr)
-        blurhash
+        blurUpThumb
         url
       }
     

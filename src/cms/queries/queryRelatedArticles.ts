@@ -11,7 +11,7 @@ query MyQuery($tags: LinksFilter) {
       width
       height
       alt(locale: fr)
-      blurhash
+      blurUpThumb
       url
     }
     slug

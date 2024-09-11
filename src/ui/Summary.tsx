@@ -44,8 +44,8 @@ export default function Summary({ content }: any) {
         if (headingEl) {
           const rect = headingEl.getBoundingClientRect();
           if (
-            rect.top <= window.innerHeight / 3 &&
-            rect.bottom >= window.innerHeight / 3
+            rect.top <= window.innerHeight / 4 &&
+            rect.bottom >= window.innerHeight / 4
           ) {
             setActiveId(headingEl.id);
           }

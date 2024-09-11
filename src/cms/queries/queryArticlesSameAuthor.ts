@@ -11,7 +11,7 @@ query MyQuery($eq: ItemId) {
       width
       height
       alt(locale: fr)
-      blurhash
+      blurUpThumb
       url
     }
     slug

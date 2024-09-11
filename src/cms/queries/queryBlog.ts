@@ -14,7 +14,7 @@ query Blog($slug: String!) {
       width
       height
       alt(locale: fr)
-      blurhash
+      blurUpThumb
       url
     }
     readingTime

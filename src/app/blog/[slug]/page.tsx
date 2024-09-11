@@ -32,9 +32,11 @@ export default async function page({ params }: { params: { slug: string } }) {
       <BlocBreadcrumb items={three} />
       <Image
         src={image?.url}
-        width={image?.width}
-        height={image?.height}
+        width={840}
+        height={500}
         alt={image?.alt}
+        placeholder="blur"
+        blurDataURL={image.blurUpThumb}
         className="rounded mb-4 shadow-lg"
       />
       <h1 className="text-4xl mb-4 font-semibold">{article.title}</h1>

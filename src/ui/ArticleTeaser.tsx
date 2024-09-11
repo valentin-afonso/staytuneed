@@ -13,9 +13,11 @@ export default function ArticleTeaser({ article }: any) {
     >
       <Image
         src={image?.url}
-        width="258"
-        height="145"
+        width={840}
+        height={500}
         alt={image?.alt}
+        placeholder="blur"
+        blurDataURL={image.blurUpThumb}
         className="rounded"
       />
       <ReadingTime time={article.readingTime} />

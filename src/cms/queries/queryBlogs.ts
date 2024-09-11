@@ -16,7 +16,7 @@ query Blogs {
       width
       height
       alt(locale: fr)
-      blurhash
+      blurUpThumb
       url
     }
   }
