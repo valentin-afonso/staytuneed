@@ -30,17 +30,8 @@ export default async function page({ params }: { params: { slug: string } }) {
     <GridLayout size="blog" additional_class="">
       <Summary content={article.content} />
       <BlocBreadcrumb items={three} />
-      <Image
-        src={image?.url}
-        width={840}
-        height={500}
-        alt={image?.alt}
-        placeholder="blur"
-        blurDataURL={image.blurUpThumb}
-        className="rounded mb-4 shadow-lg"
-      />
       <h1 className="text-4xl mb-4 font-semibold">{article.title}</h1>
-      <div className="flex flex-col gap-4 mb-4 pb-4 border-b border-b-gray-200">
+      <div className="flex flex-col gap-4 mb-8 pb-4 border-b border-b-gray-200">
         <div className="flex justify-between">
           <DateArticle
             date={article._createdAt}
@@ -50,6 +41,16 @@ export default async function page({ params }: { params: { slug: string } }) {
         </div>
         <Tags tags={article.tags} />
       </div>
+      <Image
+        src={image?.url}
+        width={840}
+        height={500}
+        alt={image?.alt}
+        placeholder="blur"
+        blurDataURL={image.blurUpThumb}
+        className="rounded mb-12 shadow-lg"
+      />
+
       <ArticleContent content={article.content} />
       <Author author={article.author} />
       {article.author && (

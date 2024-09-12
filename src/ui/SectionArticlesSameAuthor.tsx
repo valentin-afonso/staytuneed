@@ -9,7 +9,7 @@ export default async function SectionArticlesSameAuthor({ id_author }: any) {
   });
   if (!allArticles) return null;
   return (
-    <div>
+    <div className="mb-16">
       <h2 className="text-2xl font-medium mt-8">From the same author</h2>
       <DynamicListArticles
         articles={allArticles}
