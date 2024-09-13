@@ -2,8 +2,8 @@ import IconLogo from "@/ui/svg/IconLogo";
 import Link from "next/link";
 export default function Logo() {
   return (
-    <Link href="/">
+    <a href="/" aria-label="Staytuneed">
       <IconLogo />
-    </Link>
+    </a>
   );
 }
