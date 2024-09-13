@@ -44,8 +44,8 @@ export default function Summary({ content }: any) {
         if (headingEl) {
           const rect = headingEl.getBoundingClientRect();
           if (
-            rect.top <= window.innerHeight / 4 &&
-            rect.bottom >= window.innerHeight / 4
+            rect.top <= window.innerHeight &&
+            rect.bottom >= window.innerHeight
           ) {
             setActiveId(headingEl.id);
           }
@@ -58,6 +58,17 @@ export default function Summary({ content }: any) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [headings]);
+
+  const handleClick = (id: string) => {
+    // Mettre à jour l'élément actif lors du clic
+    setActiveId(id);
+
+    // Défilement fluide vers l'élément
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <>
@@ -81,6 +92,7 @@ export default function Summary({ content }: any) {
                     ? "text-black font-bold"
                     : "text-gray-light"
                 }`}
+                onClick={() => handleClick(heading.id)}
               >
                 {heading.text}
               </a>
