@@ -1,0 +1,96 @@
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://staytuneed.vercel.app/</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/about</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/productivity-with-notion</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/design-with-figma</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/array-in-js</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/understand-the-block-chain</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/the-magic-of-gsap</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/what-s-gpt-o</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/top-5-framework-js</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/next-15-what-s-new</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/how-to-learn-react-beginner-guide</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/my-third-article</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/begin-next-js</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/my-second-article</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/terms-and-conditions</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/privacy-policy</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://staytuneed.vercel.app/blog/what-s-vercel</loc>
+  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+</urlset>
