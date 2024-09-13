@@ -83,8 +83,36 @@ export default async function page({ params }: { params: { slug: string } }) {
     { url: `/blog/${slug}`, title: article.title },
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://staytuneed.vercel.app",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://staytuneed.vercel.app/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `${slug}`,
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <GridLayout size="blog" additional_class="">
         <Summary content={article.content} />
         <BlocBreadcrumb items={three} />
