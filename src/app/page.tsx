@@ -5,6 +5,12 @@ import SectionLastArticle from "@/ui/SectionLastArticle";
 import SectionFavouriteArticle from "@/ui/SectionFavouriteArticle";
 import SectionFaq from "@/ui/SectionFaq";
 
+export async function generateMetadata() {
+  return {
+    robots: "index,follow",
+  };
+}
+
 export default async function Home() {
   const { homePage } = await performRequest({ query: queryHomePage });
   if (!homePage) return <div>...</div>;

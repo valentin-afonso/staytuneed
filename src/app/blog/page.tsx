@@ -3,6 +3,12 @@ import BlocArticlesList from "@/ui/BlocArticlesList";
 import GridLayout from "@/ui/GridLayout";
 import BlocBreadcrumb from "@/ui/BlocBreadcrumb";
 
+export async function generateMetadata() {
+  return {
+    robots: "index,follow",
+  };
+}
+
 export default function page() {
   const three = [
     { url: "/", title: "Home" },

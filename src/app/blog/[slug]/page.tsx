@@ -29,6 +29,7 @@ export async function generateMetadata({
     seo.find((s: any) => s.tag === "title")?.content || article.title;
 
   return {
+    robots: "index,follow",
     title,
     description: seo.find((s: any) => s.attributes?.name === "description")
       ?.attributes?.content,
