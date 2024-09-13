@@ -29,6 +29,7 @@ export default function page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <BlocBreadcrumb items={three} />
+      <h1 className="font-black text-4xl">About us</h1>
     </>
   );
 }

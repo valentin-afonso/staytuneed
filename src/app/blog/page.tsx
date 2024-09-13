@@ -33,6 +33,9 @@ export default function page() {
       />
       <GridLayout size="boxed" additional_class="">
         <BlocBreadcrumb items={three} />
+        <h1 className="font-black text-4xl text-center">
+          Find Exactly What You Need
+        </h1>
         <BlocSearchBar />
         <BlocArticlesList />
       </GridLayout>
