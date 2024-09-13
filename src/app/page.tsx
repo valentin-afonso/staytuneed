@@ -2,6 +2,7 @@ import { performRequest } from "@/lib/datocms";
 import { queryHomePage } from "@/cms/queries/queryHomePage";
 import HeroSection from "@/ui/HeroSection";
 import SectionLastArticle from "@/ui/SectionLastArticle";
+import SectionFavouriteArticle from "@/ui/SectionFavouriteArticle";
 import SectionFaq from "@/ui/SectionFaq";
 
 export default async function Home() {
@@ -13,6 +14,7 @@ export default async function Home() {
     <div>
       <HeroSection title={title_double} slogan={slogan} />
       <SectionLastArticle />
+      <SectionFavouriteArticle />
       <SectionFaq />
     </div>
   );
