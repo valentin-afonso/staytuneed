@@ -35,5 +35,10 @@ query Blog($slug: String!) {
         height
       }
     }
+    seo:_seoMetaTags {
+      content
+      tag
+      attributes
+    }
   }
 }`;
