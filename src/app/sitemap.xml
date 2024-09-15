@@ -4,93 +4,108 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://staytuneed.vercel.app/</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/about</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/about</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/productivity-with-notion</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/vercel-vs-netlify-make-a-choice</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/design-with-figma</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/gemini-vs-gpt-make-a-choice</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/array-in-js</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/dato-vs-strapi-make-a-choice</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/understand-the-block-chain</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/think-faster-with-notion</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/the-magic-of-gsap</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/mastering-the-basics-of-design-in-figma</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/what-s-gpt-o</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/mastering-arrays-in-javascript</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/top-5-framework-js</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/understand-the-block-chain</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/next-15-what-s-new</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/the-magic-of-gsap</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/how-to-learn-react-beginner-guide</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/how-to-learn-react-beginner-guide</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/react-hook</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/a-comprehensive-guide-to-react-most-useful-hooks</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/begin-next-js</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/next-15-what-s-new</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/figma-config-2024</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/begin-next-js</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/terms-and-conditions</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/blog/figma-config-2024</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/privacy-policy</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/terms-and-conditions</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://staytuneed.vercel.app/blog/what-s-vercel</loc>
-  <lastmod>2024-09-13T19:49:17+00:00</lastmod>
+  <loc>https://www.staytuneed.com/privacy-policy</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.staytuneed.com/blog/what-s-vercel</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.staytuneed.com/blog/what-s-gpt-4o</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.staytuneed.com/blog/five-essential-javascript-frameworks</loc>
+  <lastmod>2024-09-15T19:53:17+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 </urlset>
