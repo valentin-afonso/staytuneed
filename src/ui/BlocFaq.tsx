@@ -8,12 +8,14 @@ import {
 export default function BlocFaq({ items }: any) {
   const faq_items = items.map((item: any) => (
     <AccordionItem key={item.id} value={item.id}>
-      <AccordionTrigger>{item.question}</AccordionTrigger>
-      <AccordionContent>{item.answer}</AccordionContent>
+      <AccordionTrigger className="text-lg">{item.question}</AccordionTrigger>
+      <AccordionContent>
+        <p className="text-base">{item.answer}</p>
+      </AccordionContent>
     </AccordionItem>
   ));
   return (
-    <Accordion type="single" collapsible>
+    <Accordion className="mt-4" type="single" collapsible>
       {faq_items}
     </Accordion>
   );

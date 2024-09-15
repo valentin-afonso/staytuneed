@@ -83,6 +83,10 @@ export default function SearchBar({ articles }: any) {
 
         <DrawerHeader>
           <GridLayout size="boxed" additional_class="w-full">
+            <DrawerTitle>Find your article</DrawerTitle>
+            <DrawerDescription>
+              Find tag or type any keyword for see related articles
+            </DrawerDescription>
             <div className=" flex justify-between items-center my-4 shadow-light border-gray-border rounded-full pr-4">
               <input
                 type="text"
@@ -94,10 +98,6 @@ export default function SearchBar({ articles }: any) {
               />
               <IconSearch />
             </div>
-            <DrawerTitle>Find your article</DrawerTitle>
-            <DrawerDescription>
-              Find tag or type any keyword for see related articles
-            </DrawerDescription>
           </GridLayout>
         </DrawerHeader>
 
