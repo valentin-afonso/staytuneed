@@ -41,6 +41,33 @@ export const metadata: Metadata = {
   title: "Staytuneed",
   description:
     "Welcome to Staytuneed, your friendly hub for everything tech, design, and web development! Whether you're diving into React, Next.js, or JavaScript, or looking for the latest design tips and tech news, we've got you covered. Our easy-to-follow tutorials, expert advice, and creative inspiration are here to help developers and designers of all levels grow their skills and stay ahead in the ever-changing world of tech. Stay tuned for content that makes learning fun and keeps you in the know!",
+  openGraph: {
+    title: "Staytuneed",
+    description:
+      "Stay ahead in tech, web development, and design with expert tips, tutorials, and insights. From JavaScript and React to Figma and AI – we cover it all. Let’s innovate together!",
+    type: "article",
+    url: "https://www.staytuneed.com/",
+    images: [
+      {
+        url: "https://www.staytuneed.com/twitter-image.jpg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Staytuneed",
+    description:
+      "Stay ahead in tech, web development, and design with expert tips, tutorials, and insights. From JavaScript and React to Figma and AI – we cover it all. Let’s innovate together!",
+    creator: "@valentinafso",
+    images: [
+      {
+        url: "https://www.staytuneed.com/twitter-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Staytuneed",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
