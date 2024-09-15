@@ -29,6 +29,7 @@ type ArticleContentProps = {
 };
 
 export default function ArticleContent({ content }: ArticleContentProps) {
+  console.log(content);
   return (
     <div className="structured_text mb-20">
       <StructuredText
