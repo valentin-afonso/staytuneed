@@ -5,6 +5,12 @@ import Image from "next/image";
 
 export default function ArticleTeaser({ article }: any) {
   const image = article?.image;
+  const max_length = 75;
+  let suffix = "";
+  if (article.teaser.length > max_length) {
+    suffix = "...";
+  }
+  const short_teaser = article.teaser.substring(0, max_length) + suffix;
 
   return (
     <Link
@@ -23,7 +29,7 @@ export default function ArticleTeaser({ article }: any) {
       <ReadingTime time={article.readingTime} />
       <div>
         <h2 className="font-bold text-lg mb-3">{article.title}</h2>
-        <p>{article.teaser}</p>
+        <p>{short_teaser}</p>
       </div>
       <div className="flex items-end">
         <Tags tags={article.tags} />
