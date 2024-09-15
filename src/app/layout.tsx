@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "Staytuneed",
     description:
       "Stay ahead in tech, web development, and design with expert tips, tutorials, and insights. From JavaScript and React to Figma and AI – we cover it all. Let’s innovate together!",
-    creator: "@valentinafso",
+    creator: "@staytuneed_off",
     images: [
       {
         url: "https://www.staytuneed.com/twitter-image.jpg",
