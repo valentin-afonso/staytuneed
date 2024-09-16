@@ -17,13 +17,15 @@ export default function BlocFaq({ items }: any) {
       <AccordionTrigger className="text-lg" itemProp="name">
         {item.question}
       </AccordionTrigger>
-      <AccordionContent
-        itemScope
-        itemProp="acceptedAnswer"
-        itemType="https://schema.org/Answer"
-      >
-        <div itemProp="text">
-          <p className="text-base">{item.answer}</p>
+      <AccordionContent>
+        <div
+          itemScope
+          itemProp="acceptedAnswer"
+          itemType="https://schema.org/Answer"
+        >
+          <div itemProp="text">
+            <p className="text-base">{item.answer}</p>
+          </div>
         </div>
       </AccordionContent>
     </AccordionItem>
