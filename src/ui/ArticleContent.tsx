@@ -29,7 +29,6 @@ type ArticleContentProps = {
 };
 
 export default function ArticleContent({ content }: ArticleContentProps) {
-  console.log(content);
   return (
     <div className="structured_text mb-20">
       <StructuredText
@@ -84,7 +83,6 @@ export default function ArticleContent({ content }: ArticleContentProps) {
             );
           }),
           renderNodeRule(isLink, ({ node, key, children }) => {
-            console.log(node.meta);
             const targetBlank = node.meta?.some(
               (metaEntry) =>
                 metaEntry.id === "target" && metaEntry.value === "_blank"

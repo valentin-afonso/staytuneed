@@ -8,7 +8,7 @@ export default function IconLogo() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_118_25)">
+        <g clipPath="url(#clip0_118_25)">
           <mask
             id="mask0_118_25"
             maskUnits="userSpaceOnUse"
@@ -40,7 +40,7 @@ export default function IconLogo() {
               height="43"
               rx="21.5"
               fill="url(#paint2_radial_118_25)"
-              fill-opacity="0.8"
+              fillOpacity="0.8"
             />
             <rect
               width="43"
@@ -53,7 +53,7 @@ export default function IconLogo() {
               height="43"
               rx="21.5"
               fill="url(#paint4_radial_118_25)"
-              fill-opacity="0.78"
+              fillOpacity="0.78"
             />
           </g>
           <path
@@ -106,8 +106,8 @@ export default function IconLogo() {
             y2="7.52757"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FFAADD" />
-            <stop offset="1" stop-color="#FFAADD" stop-opacity="0" />
+            <stop stopColor="#FFAADD" />
+            <stop offset="1" stopColor="#FFAADD" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint1_linear_118_25"
@@ -117,9 +117,9 @@ export default function IconLogo() {
             y2="23.6132"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#3E9EF6" />
-            <stop offset="0.47914" stop-color="#EE2BB7" stop-opacity="0.33" />
-            <stop offset="1" stop-color="#F63E6A" stop-opacity="0" />
+            <stop stopColor="#3E9EF6" />
+            <stop offset="0.47914" stopColor="#EE2BB7" stopOpacity="0.33" />
+            <stop offset="1" stopColor="#F63E6A" stopOpacity="0" />
           </linearGradient>
           <radialGradient
             id="paint2_radial_118_25"
@@ -129,9 +129,9 @@ export default function IconLogo() {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(4.22321 1.34375) rotate(47.3358) scale(34.4159 40.1238)"
           >
-            <stop stop-color="#3184FF" />
-            <stop offset="0.521608" stop-color="#384BF7" stop-opacity="0.26" />
-            <stop offset="1" stop-color="#3EF6F6" stop-opacity="0" />
+            <stop stopColor="#3184FF" />
+            <stop offset="0.521608" stopColor="#384BF7" stopOpacity="0.26" />
+            <stop offset="1" stopColor="#3EF6F6" stopOpacity="0" />
           </radialGradient>
           <linearGradient
             id="paint3_linear_118_25"
@@ -141,8 +141,8 @@ export default function IconLogo() {
             y2="51.8039"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FFF0A4" />
-            <stop offset="1" stop-color="#FFF0A4" stop-opacity="0" />
+            <stop stopColor="#FFF0A4" />
+            <stop offset="1" stopColor="#FFF0A4" stopOpacity="0" />
           </linearGradient>
           <radialGradient
             id="paint4_radial_118_25"
@@ -152,8 +152,8 @@ export default function IconLogo() {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(41.0804 40.8724) rotate(-135.306) scale(27.5441 53.0642)"
           >
-            <stop stop-color="#FF9C41" />
-            <stop offset="1" stop-color="#FFA858" stop-opacity="0" />
+            <stop stopColor="#FF9C41" />
+            <stop offset="1" stopColor="#FFA858" stopOpacity="0" />
           </radialGradient>
           <clipPath id="clip0_118_25">
             <rect width="150" height="43" fill="white" />

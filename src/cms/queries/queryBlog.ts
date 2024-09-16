@@ -4,6 +4,7 @@ query Blog($slug: String!) {
     id
     slug
     title
+    teaser
     _createdAt
     _updatedAt
     tags {

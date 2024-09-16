@@ -12,6 +12,18 @@ query FavouriteArticles {
         libelle
         id
       }
+      author {
+        id
+        firstname
+        lastname
+        social
+        socialUrl
+        pictureProfil {
+          url
+          width
+          height
+        }
+      }
       image {
         width
         height

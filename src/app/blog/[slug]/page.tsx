@@ -83,8 +83,10 @@ export default async function page({ params }: { params: { slug: string } }) {
     { url: "/blog", title: "Blog" },
     { url: `/blog/${slug}`, title: article.title },
   ];
-
-  const jsonLd = {
+  const tagsString: string = article.tags
+    .map((tag: any) => tag.libelle)
+    .join(" ");
+  const jsonLdBreadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
@@ -108,11 +110,36 @@ export default async function page({ params }: { params: { slug: string } }) {
     ],
   };
 
+  const jsonLdArticle = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    alternativeHeadline: article.title,
+    image: image?.url,
+    editor: "Staytuneed",
+    genre: tagsString,
+    keywords: tagsString,
+    publisher: "Staytuneed",
+    url: `https://www.staytuneed.com/blog/${slug}`,
+    datePublished: article._createdAt,
+    dateCreated: article._createdAt,
+    dateModified: article._updatedAt,
+    description: article.teaser,
+    articleBody: article.teaser,
+    author: {
+      "@type": "Person",
+      name: `${article.author.firstname} ${article.author.lastname}`,
+    },
+  };
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }}
       />
       <GridLayout size="blog" additional_class="">
         <Summary content={article.content} />
