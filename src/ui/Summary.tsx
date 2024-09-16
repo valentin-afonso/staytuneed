@@ -72,7 +72,7 @@ export default function Summary({ content }: any) {
 
   return (
     <>
-      <div className="fixed left-5 top-0 bottom-0 flex items-center pr-6">
+      <div className="fixed left-5 top-0 bottom-0 flex items-center pr-6 max-[1400px]:hidden ">
         {/* Progress bar */}
         <div className="relative h-20 w-1 rounded-full bg-gray-200">
           <div

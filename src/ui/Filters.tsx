@@ -17,10 +17,7 @@ export default function Filters({ tags, selectedTags, setSelectedTags }: any) {
   };
 
   const list_tags = tags.map((tag: any) => (
-    <CarouselItem
-      key={tag.id}
-      className={`grid md:basis-1/2 lg:basis-auto pl-3`}
-    >
+    <CarouselItem key={tag.id} className={`grid basis-auto pl-3`}>
       <ToggleGroupItem
         value={tag.libelle}
         onClick={() => handleToggle(tag.libelle)}

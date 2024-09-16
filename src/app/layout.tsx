@@ -79,7 +79,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={satoshi.className}>
         <Header />
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <main className="flex min-h-screen flex-col items-center justify-between p-24 max-md:p-4">
           {children}
         </main>
         <Footer />

@@ -22,7 +22,10 @@ export default function ArticleList({ articles, tags }: any) {
         selectedTags={selectedTags}
         setSelectedTags={setSelectedTags}
       />
-      <DynamicListArticles articles={filtered_articles} columns="grid-cols-4" />
+      <DynamicListArticles
+        articles={filtered_articles}
+        columns="grid-cols-4 gap-x-2 max-md:grid-cols-2 max-lg:grid-cols-[276px_276px_276px] max-xl:grid-cols-[276px_276px_276px_276px]"
+      />
     </>
   );
 }
