@@ -37,12 +37,25 @@ export default function ArticleTeaser({ article }: any) {
       name: `${article.author.firstname} ${article.author.lastname}`,
     },
   };
+  const jsonLdImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    author: "Staytuneed",
+    contentUrl: image?.url,
+    datePublished: article._createdAt,
+    description: alt,
+    name: article.title,
+  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdImage) }}
       />
       <Link
         href={`/blog/${article.slug}`}

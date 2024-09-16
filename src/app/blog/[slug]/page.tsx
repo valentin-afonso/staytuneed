@@ -83,6 +83,7 @@ export default async function page({ params }: { params: { slug: string } }) {
     { url: "/blog", title: "Blog" },
     { url: `/blog/${slug}`, title: article.title },
   ];
+  const alt = image?.alt ? image?.alt : "article staytuneed";
   const tagsString: string = article.tags
     .map((tag: any) => tag.libelle)
     .join(" ");
@@ -131,6 +132,15 @@ export default async function page({ params }: { params: { slug: string } }) {
       name: `${article.author.firstname} ${article.author.lastname}`,
     },
   };
+  const jsonLdImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    author: "Staytuneed",
+    contentUrl: image?.url,
+    datePublished: article._createdAt,
+    description: alt,
+    name: article.title,
+  };
   return (
     <>
       <script
@@ -140,6 +150,10 @@ export default async function page({ params }: { params: { slug: string } }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdImage) }}
       />
       <GridLayout size="blog" additional_class="">
         <Summary content={article.content} />
@@ -159,7 +173,7 @@ export default async function page({ params }: { params: { slug: string } }) {
           src={image?.url}
           width={840}
           height={500}
-          alt={image?.alt}
+          alt={alt}
           placeholder="blur"
           blurDataURL={image.blurUpThumb}
           className="rounded mb-12 shadow-lg"
