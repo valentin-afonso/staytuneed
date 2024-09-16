@@ -17,11 +17,11 @@ export default async function Home() {
   const title_double = homePage?.titleDouble;
   const slogan = homePage?.introText;
   return (
-    <div>
+    <>
       <HeroSection title={title_double} slogan={slogan} />
       <SectionLastArticle />
       <SectionFavouriteArticle />
       <SectionFaq />
-    </div>
+    </>
   );
 }

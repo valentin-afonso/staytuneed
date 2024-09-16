@@ -7,7 +7,7 @@ import IconVercel from "@/ui/svg/topics/IconVercel";
 
 export default function Marquee() {
   return (
-    <div className="content_marquee relative flex overflow-hidden">
+    <div className="max-w-full content_marquee relative flex overflow-hidden">
       <ul className="flex gap-12 animate-marquee whitespace-nowrap">
         <li className=" mx-4">
           <IconFigma />

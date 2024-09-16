@@ -9,19 +9,21 @@ export default function GridLayout({
   size,
   additional_class,
 }: GridLayoutType) {
-  let layout_width = "max-w-[1176px]";
+  let layout_width = "max-w-[100vw] min-[1176px]:max-w-[1176px]";
   if (size === "boxed") {
-    layout_width = "max-w-[1176px]";
+    layout_width = "max-w-[100vw] min-[1176px]:max-w-[1176px]";
   }
   if (size === "blog") {
-    layout_width = "max-w-[840px]";
+    layout_width = "max-w-[100vw] min-[840px]:max-w-[840px]";
   }
   if (size === "fullwidth") {
-    layout_width = "max-w-[1440px]";
+    layout_width = "max-w-[100vw] min-[1440px]:max-w-[1440px]";
   }
 
   return (
-    <div className={`${layout_width} m-auto 2xl:px-0 ${additional_class}`}>
+    <div
+      className={`${layout_width} max-w- m-auto 2xl:px-0 ${additional_class}`}
+    >
       {children}
     </div>
   );
