@@ -22,9 +22,9 @@ export default function BlocFaq({ items }: any) {
         itemProp="acceptedAnswer"
         itemType="https://schema.org/Answer"
       >
-        <p className="text-base" itemProp="text">
-          {item.answer}
-        </p>
+        <div itemProp="text">
+          <p className="text-base">{item.answer}</p>
+        </div>
       </AccordionContent>
     </AccordionItem>
   ));
