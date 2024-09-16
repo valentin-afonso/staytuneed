@@ -6,39 +6,34 @@ import {
 } from "@/components/ui/accordion";
 
 export default function BlocFaq({ items }: any) {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item: any) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   const faq_items = items.map((item: any) => (
-    <AccordionItem
-      key={item.id}
-      value={item.id}
-      itemScope
-      itemProp="mainEntity"
-      itemType="https://schema.org/Question"
-    >
-      <AccordionTrigger className="text-lg" itemProp="name">
-        {item.question}
-      </AccordionTrigger>
+    <AccordionItem key={item.id} value={item.id}>
+      <AccordionTrigger className="text-lg">{item.question}</AccordionTrigger>
       <AccordionContent>
-        <div
-          itemScope
-          itemProp="acceptedAnswer"
-          itemType="https://schema.org/Answer"
-        >
-          <div itemProp="text">
-            <p className="text-base">{item.answer}</p>
-          </div>
-        </div>
+        <p className="text-base">{item.answer}</p>
       </AccordionContent>
     </AccordionItem>
   ));
   return (
     <>
-      <Accordion
-        className="mt-4"
-        type="single"
-        collapsible
-        itemScope
-        itemType="https://schema.org/FAQPage"
-      >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Accordion className="mt-4" type="single" collapsible>
         {faq_items}
       </Accordion>
     </>
