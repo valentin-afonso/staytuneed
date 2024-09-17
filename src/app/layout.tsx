@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import Header from "@/ui/Header";
 import Footer from "@/ui/Footer";
+import ProgressBar from "@/ui/ProgressBar";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -78,6 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={satoshi.className}>
+        <ProgressBar />
         <Header />
         <main className="flex min-h-screen flex-col items-center justify-between p-24 max-md:p-4">
           {children}

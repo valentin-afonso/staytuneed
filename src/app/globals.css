@@ -29,6 +29,18 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --gradient: linear-gradient(
+        -150.109deg,
+        #fff0a4 0%,
+        rgba(255, 240, 164, 0%) 100%
+      ),
+      linear-gradient(
+        117.394deg,
+        #3e9ef6 0%,
+        rgba(238, 43, 183, 33%) 48%,
+        rgba(246, 62, 106, 0%) 100%
+      ),
+      linear-gradient(-53.472deg, #ffaadd 0%, rgba(255, 170, 221, 0%) 100%);
   }
 
   .dark {
@@ -181,4 +193,29 @@ body[data-scroll-locked] {
 }
 .summary {
   max-width: calc((100vw - 840px) / 2);
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: var(--gradient);
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+}
+
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1;
+  transform: rotate(3deg) translate(0px, -4px);
 }

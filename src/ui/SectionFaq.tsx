@@ -9,7 +9,7 @@ export default async function SectionFaq() {
   if (!allFaqItems) return <div>...</div>;
 
   return (
-    <GridLayout size="boxed" additional_class="">
+    <GridLayout size="boxed" additional_class="w-full">
       <TitleSecond>Your Questions, Answered</TitleSecond>
       <BlocFaq items={allFaqItems} />
     </GridLayout>

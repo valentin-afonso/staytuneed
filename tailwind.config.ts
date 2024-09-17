@@ -57,6 +57,8 @@ const config = {
         purple: "#5B55FF",
         "purple-light": "#E3E2FF",
         "purple-stroke": "#C9C7FF",
+        gradient:
+          "linear-gradient(-150.109deg, #FFF0A4 0%, rgba(255, 240, 164, 0%) 100%), linear-gradient(117.394deg, #3E9EF6 0%, rgba(238, 43, 183, 33%) 48%, rgba(246, 62, 106, 0%) 100%), linear-gradient(-53.472deg, #FFAADD 0%, rgba(255, 170, 221, 0%) 100%);",
       },
       borderRadius: {
         lg: "var(--radius)",
