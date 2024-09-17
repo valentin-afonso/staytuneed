@@ -1,6 +1,7 @@
 import { performRequest } from "@/lib/datocms";
 import { queryBottom } from "@/cms/queries/queryBottom";
 import NavLink from "@/ui/NavLink";
+import IconLogoFooter from "@/ui/svg/IconLogoFooter";
 
 export default async function Bottom() {
   const { bottom } = await performRequest({ query: queryBottom });
@@ -11,10 +12,14 @@ export default async function Bottom() {
       <NavLink name={item.navigationLabel} href={item.page.slug} />
     </li>
   ));
-
-  return (
+  /*
     <nav>
       <ul className="flex justify-center gap-6">{listLinks}</ul>
     </nav>
+*/
+  return (
+    <div className="relative w-full h-24 overflow-hidden">
+      <IconLogoFooter />
+    </div>
   );
 }

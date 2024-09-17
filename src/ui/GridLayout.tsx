@@ -22,7 +22,7 @@ export default function GridLayout({
 
   return (
     <div
-      className={`${layout_width} max-w- m-auto 2xl:px-0 ${additional_class}`}
+      className={`${layout_width} max-w- mx-auto 2xl:px-0 ${additional_class}`}
     >
       {children}
     </div>

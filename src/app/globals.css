@@ -219,3 +219,25 @@ body[data-scroll-locked] {
   opacity: 1;
   transform: rotate(3deg) translate(0px, -4px);
 }
+.hero_section_sketch {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -14%) rotate(358deg);
+  z-index: -1;
+}
+.svg_wave {
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 100%;
+  transform: translateY(-100%);
+}
+.logo_footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 79px);
+}
