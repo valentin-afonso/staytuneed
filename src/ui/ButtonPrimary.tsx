@@ -13,7 +13,7 @@ export default function ButtonPrimary({
   return (
     <Link
       href={url}
-      className={`${additional_class} px-4 py-1 rounded-sm bg-zinc-100 border hover:bg-zinc-200`}
+      className={`${additional_class} w-max px-4 py-1 rounded-sm bg-zinc-100 border hover:bg-zinc-200`}
     >
       {children}
     </Link>

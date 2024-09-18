@@ -2,6 +2,7 @@ import BlogGradient from "@/ui/svg/BlogGradient";
 import GridLayout from "@/ui/GridLayout";
 import TitleSecond from "@/ui/TitleSecond";
 import Image from "next/image";
+import ButtonPrimary from "@/ui/ButtonPrimary";
 
 export default function SectionImageText() {
   return (
@@ -17,6 +18,9 @@ export default function SectionImageText() {
           amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
           labore et dolore magna aliqua.
         </p>
+        <ButtonPrimary url="/about" additional_class="">
+          learn more
+        </ButtonPrimary>
       </div>
       <div className="grid grid-cols-1 grid-rows-1">
         <BlogGradient />
