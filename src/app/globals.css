@@ -113,6 +113,7 @@ header {
   border-color: rgb(229 231 235/1);
   background-color: rgb(243 244 246/0.8);
 }
+
 .content_marquee::before,
 .content_marquee::after {
   position: absolute;

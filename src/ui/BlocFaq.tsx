@@ -4,6 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import IconPlusCircle from "@/ui/svg/IconPlusCircle";
+import IconMinusCircle from "@/ui/svg/IconMinusCircle";
 
 export default function BlocFaq({ items }: any) {
   const faqSchema = {
@@ -20,8 +22,10 @@ export default function BlocFaq({ items }: any) {
   };
 
   const faq_items = items.map((item: any) => (
-    <AccordionItem key={item.id} value={item.id}>
-      <AccordionTrigger className="text-lg">{item.question}</AccordionTrigger>
+    <AccordionItem key={item.id} value={item.id} className="border-none">
+      <AccordionTrigger className="flex justify-between items-center w-full text-lg [&[data-state=open]>svg>path.line]:opacity-0">
+        {item.question} <IconPlusCircle />
+      </AccordionTrigger>
       <AccordionContent>
         <p className="text-base">{item.answer}</p>
       </AccordionContent>

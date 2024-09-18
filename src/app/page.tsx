@@ -4,6 +4,7 @@ import HeroSection from "@/ui/HeroSection";
 import SectionLastArticle from "@/ui/SectionLastArticle";
 import SectionFavouriteArticle from "@/ui/SectionFavouriteArticle";
 import SectionFaq from "@/ui/SectionFaq";
+import SectionImageText from "@/ui/SectionImageText";
 
 export async function generateMetadata() {
   return {
@@ -20,6 +21,7 @@ export default async function Home() {
     <>
       <HeroSection title={title_double} slogan={slogan} />
       <SectionLastArticle />
+      <SectionImageText />
       <SectionFavouriteArticle />
       <SectionFaq />
     </>
