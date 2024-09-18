@@ -4,8 +4,11 @@ import GridLayout from "@/ui/GridLayout";
 
 export default function Header() {
   return (
-    <header className="">
-      <GridLayout size="boxed" additional_class="flex justify-between py-4">
+    <header className="fixed w-full z-10">
+      <GridLayout
+        size="boxed"
+        additional_class="flex items-center justify-between py-4"
+      >
         <Logo />
         <MainNav />
       </GridLayout>

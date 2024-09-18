@@ -2,6 +2,7 @@ import { performRequest } from "@/lib/datocms";
 import { queryBottom } from "@/cms/queries/queryBottom";
 import NavLink from "@/ui/NavLink";
 import IconLogoFooter from "@/ui/svg/IconLogoFooter";
+import IconLogoFooterGradient from "@/ui/svg/IconLogoFooterGradient";
 
 export default async function Bottom() {
   const { bottom } = await performRequest({ query: queryBottom });
@@ -19,6 +20,7 @@ export default async function Bottom() {
 */
   return (
     <div className="relative w-full h-24 overflow-hidden">
+      <IconLogoFooterGradient />
       <IconLogoFooter />
     </div>
   );

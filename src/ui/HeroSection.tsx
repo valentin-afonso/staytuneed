@@ -6,7 +6,7 @@ import Sketch from "@/ui/svg/Sketch";
 
 export default function HeroSection({ title, slogan }: any) {
   return (
-    <GridLayout size="boxed" additional_class="relative mb-32">
+    <GridLayout size="boxed" additional_class="relative mb-32 mt-28">
       <TitleDouble
         first={title.firstPart}
         second={title.secondPart}

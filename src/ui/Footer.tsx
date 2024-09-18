@@ -7,11 +7,13 @@ import IconLogoFooter from "@/ui/svg/IconLogoFooter";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-[25rem]">
-      <Wave />
+    <footer className="relative flex flex-col">
+      <div className="top_line">
+        <Wave />
+      </div>
       <GridLayout
         size="boxed"
-        additional_class="flex justify-between gap-8 pb-12"
+        additional_class=" flex justify-between w-full gap-8 pb-12"
       >
         <FooterNav />
         <Socials />
