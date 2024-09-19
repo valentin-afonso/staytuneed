@@ -1,4 +1,5 @@
 import Link from "next/link";
+import IconArrowRight from "@/ui/svg/IconArrowRight";
 
 type ButtonPrimaryType = {
   children: React.ReactNode;
@@ -13,9 +14,10 @@ export default function ButtonPrimary({
   return (
     <Link
       href={url}
-      className={`${additional_class} w-max px-4 py-1 rounded-sm bg-zinc-100 border hover:bg-zinc-200`}
+      className={`relative link_primary flex items-center gap-3 ${additional_class} w-max px-4 py-1 rounded-sm bg-white border border-gray-border shadow-sm`}
     >
       {children}
+      <IconArrowRight />
     </Link>
   );
 }

@@ -216,17 +216,6 @@ body[data-scroll-locked] {
   width: 100%;
   height: 6px;
 }
-
-#nprogress .peg {
-  display: block;
-  position: absolute;
-  right: 0px;
-  width: 100px;
-  height: 100%;
-  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
-  opacity: 1;
-  transform: rotate(3deg) translate(0px, -4px);
-}
 .hero_section_sketch {
   position: absolute;
   left: 50%;
@@ -265,4 +254,123 @@ body[data-scroll-locked] {
 }
 .logo_footer_gradient {
   transform: translate(-52%, 54px);
+}
+
+.link_primary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  z-index: -1;
+  transform: translate(0, 0);
+  opacity: 0;
+  @apply rounded-sm;
+  transition: all 0.3s ease;
+}
+.link_primary svg {
+  transform: translate(0, 0);
+  transition: all 0.3s ease-in-out;
+}
+.link_primary:hover {
+  @apply shadow;
+}
+.link_primary:hover svg {
+  transform: translate(5px, 0);
+}
+.link_primary:hover::before {
+  transform: translate(-5px, -5px);
+  opacity: 0.5;
+}
+.searchbar_trigger {
+  transition: all.4s ease;
+}
+.searchbar_trigger:hover {
+  transform: translateY(-5px);
+}
+.searchbar_trigger:hover svg {
+  animation: shake 150ms 0.3s 2 linear;
+  -moz-animation: shake 150ms 0.3s 2 linear;
+  -webkit-animation: shake 150ms 0.3s 2 linear;
+  -o-animation: shake 150ms 0.3s 2 linear;
+}
+.card {
+  transition: all 0.4s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(3px, 0);
+  }
+  50% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@-moz-keyframes shake {
+  0% {
+    -moz-transform: translate(3px, 0);
+  }
+  50% {
+    -moz-transform: translate(-3px, 0);
+  }
+  100% {
+    -moz-transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(3px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-3px, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+@-ms-keyframes shake {
+  0% {
+    -ms-transform: translate(3px, 0);
+  }
+  50% {
+    -ms-transform: translate(-3px, 0);
+  }
+  100% {
+    -ms-transform: translate(0, 0);
+  }
+}
+
+@-o-keyframes shake {
+  0% {
+    -o-transform: translate(3px, 0);
+  }
+  50% {
+    -o-transform: translate(-3px, 0);
+  }
+  100% {
+    -o-transform: translate(0, 0);
+  }
 }

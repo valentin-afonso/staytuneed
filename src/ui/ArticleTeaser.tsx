@@ -59,7 +59,7 @@ export default function ArticleTeaser({ article }: any) {
       />
       <Link
         href={`/blog/${article.slug}`}
-        className="relative grid  grid-rows-teaser gap-4 w-[276px] max-w-full p-2 rounded-xl shadow-light"
+        className="card relative grid  grid-rows-teaser gap-4 w-[276px] max-w-full p-2 rounded-xl shadow-light hover:shadow-md"
       >
         <Image
           src={image?.url}

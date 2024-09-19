@@ -5,7 +5,7 @@ export default function Slogan({ text }: any) {
     <div className="flex flex-col gap-10 items-center">
       <div>
         {text.split("\n").map((line: string, index: number) => (
-          <p key={index} className="font-medium text-xl text-center">
+          <p key={index} className="font-medium text-xl text-center opacity-80">
             {line}
           </p>
         ))}

@@ -54,6 +54,7 @@ const config = {
         },
         "gray-light": "#6D6D6D",
         "gray-border": "#E9E9E9",
+        "gray-border-secondary": "rgb(229 231 235/1)",
         purple: "#5B55FF",
         "purple-light": "#E3E2FF",
         "purple-stroke": "#C9C7FF",
