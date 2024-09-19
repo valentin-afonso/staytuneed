@@ -68,7 +68,7 @@ export default function SearchBar({ articles }: any) {
   return (
     <Drawer open={open}>
       <DrawerTrigger asChild onClick={() => setOpen(true)}>
-        <div className="searchbar_trigger relative flex justify-between items-center mt-12 mb-28 mx-auto w-[576px] max-w-full bg-white shadow-light hover:shadow-md border-gray-border rounded-full py-2 px-5 pr-4 cursor-pointer">
+        <div className="searchbar_trigger relative flex justify-between items-center mt-12 mb-28 mx-auto w-[576px] max-w-full bg-white shadow-light hover:shadow-md border border-gray-border rounded-full py-2 px-5 pr-4 cursor-pointer">
           <p className="text-gray-400">Find a article...</p>
           <IconSearch />
         </div>
