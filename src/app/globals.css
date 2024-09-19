@@ -107,13 +107,18 @@
   background: #5300ff0a;
 }
 header {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid;
   border-color: rgb(229 231 235/1);
+}
+.bg_blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   background-color: rgb(243 244 246/0.8);
 }
-
+div.bg_blur {
+  border: 1px solid;
+  border-color: rgb(229 231 235/1);
+}
 .content_marquee::before,
 .content_marquee::after {
   position: absolute;
@@ -373,4 +378,20 @@ body[data-scroll-locked] {
   100% {
     -o-transform: translate(0, 0);
   }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+.floating {
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
 }

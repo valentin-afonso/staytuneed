@@ -7,7 +7,7 @@ export default function BlogGradient() {
         viewBox="0 0 620 552"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="col-start-1 col-end-1 row-start-1 row-end-1"
+        className="absolute floating left-[12rem] top-0 z-0"
       >
         <path
           d="M620 225.407C620 368.524 330.601 552 212.977 552C95.3531 552 0 435.981 0 292.864C0 149.748 106.847 0 224.471 0C561.178 271.475 620 82.2902 620 225.407Z"
