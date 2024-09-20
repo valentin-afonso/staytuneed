@@ -76,29 +76,29 @@ export default function SearchBar({ articles }: any) {
       <DrawerContent className="px-20 py-4" ref={drawerContentRef}>
         <DrawerClose
           onClick={() => setOpen(false)}
-          className="flex justify-end"
+          className="absolute right-4 top-4"
         >
           <IconClose />
         </DrawerClose>
 
         <DrawerHeader>
-          <GridLayout size="boxed" additional_class="w-full">
+          <div className="w-[600px] max-w-full mx-auto ">
             <DrawerTitle>Find your article</DrawerTitle>
             <DrawerDescription>
               Find tag or type any keyword for see related articles
             </DrawerDescription>
-            <div className=" flex justify-between items-center my-4 shadow-light border-gray-border rounded-full pr-4">
+            <div className=" flex justify-between items-center my-4 shadow-light border border-gray-border rounded-full pr-4">
               <input
                 type="text"
                 placeholder="Tap something..."
-                className="flex-grow py-2 px-4 focus:outline-none "
+                className="flex-grow py-2 px-4 bg-transparent focus:outline-none "
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
                 ref={inputRef}
               />
               <IconSearch />
             </div>
-          </GridLayout>
+          </div>
         </DrawerHeader>
 
         <DrawerSearch articles={filteredArticles} />
