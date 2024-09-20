@@ -10,10 +10,10 @@ export default async function SectionArticlesSameAuthor({ id_author }: any) {
   if (!allArticles) return null;
   return (
     <div className="mb-16">
-      <h2 className="text-2xl font-medium mt-8">From the same author</h2>
+      <h2 className="text-2xl font-medium mt-8 mb-4">From the same author</h2>
       <DynamicListArticles
         articles={allArticles}
-        columns="grid-cols-[276px_276px]"
+        columns="grid-cols-[276px_276px] gap-4"
       />
     </div>
   );
