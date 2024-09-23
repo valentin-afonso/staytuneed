@@ -81,7 +81,7 @@ export default function RootLayout({
       <body className={satoshi.className}>
         <ProgressBar />
         <Header />
-        <main className="flex min-h-screen flex-col items-center justify-between p-24 max-md:p-4">
+        <main className="flex min-h-screen max-w-[100vw] overflow-x-hidden flex-col items-center justify-between p-24 max-md:p-4">
           {children}
         </main>
         <Footer />

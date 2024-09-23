@@ -23,7 +23,7 @@ export default function BlocFaq({ items }: any) {
 
   const faq_items = items.map((item: any) => (
     <AccordionItem key={item.id} value={item.id} className="border-none">
-      <AccordionTrigger className="flex justify-between items-center w-full text-lg [&[data-state=open]>svg>path.line]:opacity-0">
+      <AccordionTrigger className="flex justify-between items-center text-left w-full text-base sm:text-lg [&[data-state=open]>svg>path.line]:opacity-0">
         {item.question} <IconPlusCircle />
       </AccordionTrigger>
       <AccordionContent>

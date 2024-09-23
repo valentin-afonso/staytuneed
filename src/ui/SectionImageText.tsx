@@ -9,7 +9,7 @@ export default function SectionImageText() {
   return (
     <GridLayout
       size="boxed"
-      additional_class="w-full flex justify-between items-center mb-16"
+      additional_class="w-full flex flex-col gap-8 lg:flex-row items-start justify-between lg:items-center lg:gap-0 mb-16"
     >
       <div className="flex flex-col max-w-[432px] gap-4">
         <TitleSecond>Explore the unknown</TitleSecond>

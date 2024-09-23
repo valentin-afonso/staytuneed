@@ -11,7 +11,13 @@ export default function TitleDouble({ first, second, level, align }: any) {
     </>
   );
   if (level === "1") {
-    return <h1 className={`${class_title} font-black text-4xl`}>{content}</h1>;
+    return (
+      <h1
+        className={`${class_title} font-black text-2xl sm:text-3xl md:text-4xl`}
+      >
+        {content}
+      </h1>
+    );
   }
   if (level === "2") {
     return <h2 className={`${class_title}`}>{content}</h2>;

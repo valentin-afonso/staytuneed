@@ -11,7 +11,7 @@ export default function GridLayout({
 }: GridLayoutType) {
   let layout_width = "max-w-[100vw] min-[1176px]:max-w-[1176px]";
   if (size === "boxed") {
-    layout_width = "max-w-[100vw] min-[1176px]:max-w-[1176px]";
+    layout_width = "max-w-[100%] min-[1176px]:max-w-[1176px] px-4";
   }
   if (size === "blog") {
     layout_width = "max-w-[100vw] min-[840px]:max-w-[840px]";
