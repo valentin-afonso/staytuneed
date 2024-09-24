@@ -73,7 +73,7 @@ export default function SearchBar({ articles }: any) {
           <IconSearch />
         </div>
       </DrawerTrigger>
-      <DrawerContent className="px-20 py-4" ref={drawerContentRef}>
+      <DrawerContent className="px-4 md:px-20 py-4" ref={drawerContentRef}>
         <DrawerClose
           onClick={() => setOpen(false)}
           className="absolute right-4 top-4"
@@ -81,8 +81,8 @@ export default function SearchBar({ articles }: any) {
           <IconClose />
         </DrawerClose>
 
-        <DrawerHeader>
-          <div className="w-[600px] max-w-full mx-auto ">
+        <DrawerHeader className="text-left">
+          <div className="w-full md:w-[600px] max-w-full mx-auto ">
             <DrawerTitle>Find your article</DrawerTitle>
             <DrawerDescription>
               Find tag or type any keyword for see related articles

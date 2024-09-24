@@ -7,6 +7,7 @@ export default function IconLogo() {
         viewBox="0 0 150 43"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="w-24 sm:w-auto hauto"
       >
         <g clipPath="url(#clip0_118_25)">
           <mask

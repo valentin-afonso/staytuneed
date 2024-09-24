@@ -7,7 +7,7 @@ export default function Header() {
     <header className="fixed w-full bg_blur z-10">
       <GridLayout
         size="boxed"
-        additional_class="flex items-center justify-between py-4 px-8 xl:px-0"
+        additional_class="flex items-center justify-between py-4 px-4 sm:px-8 xl:px-0"
       >
         <Logo />
         <MainNav />
