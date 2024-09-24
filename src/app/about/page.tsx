@@ -30,7 +30,7 @@ export default function page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <GridLayout size="boxed" additional_class="">
+      <GridLayout size="boxed" additional_class="max-md:pt-24">
         <BlocBreadcrumb items={three} />
         <TitleDouble
           first="Your Guide"

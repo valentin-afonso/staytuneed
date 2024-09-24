@@ -13,7 +13,9 @@ export default function HeroSection({ title, slogan }: any) {
         level="1"
         align="center"
       />
-      <BlocSearchBar />
+      <div className=" mb-28">
+        <BlocSearchBar />
+      </div>
       <Slogan text={slogan} />
       <Sketch />
     </GridLayout>

@@ -59,7 +59,7 @@ export default function ArticleTeaser({ article }: any) {
       />
       <Link
         href={`/blog/${article.slug}`}
-        className="card relative grid  grid-rows-teaser gap-4 w-[276px] max-w-full p-2 rounded-xl border border-gray-border shadow-light hover:shadow-md"
+        className="card relative grid  grid-rows-teaser gap-4 max-w-[100%] w-[200px] sm:w-[276px] p-2 rounded-xl bg-white border border-gray-border shadow-light hover:shadow-md"
       >
         <Image
           src={image?.url}
@@ -68,14 +68,16 @@ export default function ArticleTeaser({ article }: any) {
           alt={alt}
           placeholder="blur"
           blurDataURL={image.blurUpThumb}
-          className="rounded"
+          className="rounded max-w-full"
         />
         <ReadingTime time={article.readingTime} />
         <div>
-          <h2 className="font-bold text-lg mb-3">{article.title}</h2>
-          <p>{short_teaser}</p>
+          <h2 className="font-bold text-base mb-2 sm:text-lg sm:mb-3">
+            {article.title}
+          </h2>
+          <p className="text-sm sm:text-base">{short_teaser}</p>
         </div>
-        <div className="flex items-end">
+        <div className="flex items-end max-w-full overflow-hidden">
           <Tags tags={article.tags} />
         </div>
       </Link>

@@ -33,7 +33,7 @@ export default function Filters({ tags, selectedTags, setSelectedTags }: any) {
         opts={{
           align: "start",
         }}
-        className="w-full min-h-[40px] container_filters"
+        className="w-full max-w-[90%] lg:max-w-full min-h-[40px] container_filters"
       >
         <CarouselContent className="-ml-3 py-4 px-1">
           {list_tags}

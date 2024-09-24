@@ -14,7 +14,7 @@ export default function GridLayout({
     layout_width = "max-w-[100%] min-[1176px]:max-w-[1176px] px-4";
   }
   if (size === "blog") {
-    layout_width = "max-w-[100vw] min-[840px]:max-w-[840px]";
+    layout_width = "max-w-[100%] w-[840px]";
   }
   if (size === "fullwidth") {
     layout_width = "max-w-[100vw] min-[1440px]:max-w-[1440px]";

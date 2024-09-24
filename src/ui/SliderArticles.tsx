@@ -23,7 +23,7 @@ export default function SliderArticles({ articles, slidePerView }: any) {
     );
 
   const article_slides = articles.map((article: any) => (
-    <CarouselItem key={article.id} className={`grid basis-auto pl-8`}>
+    <CarouselItem key={article.id} className={`grid basis-auto pl-4 sm:pl-8`}>
       <ArticleTeaser article={article} />
     </CarouselItem>
   ));
@@ -34,11 +34,11 @@ export default function SliderArticles({ articles, slidePerView }: any) {
       }}
       className="w-full min-h-[420px]"
     >
-      <CarouselContent className="-ml-8 py-4 px-1">
+      <CarouselContent className="-ml-4 sm:-ml-8 py-4 px-1">
         {article_slides}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="lg:absolute" />
+      <CarouselNext className="lg:absolute" />
     </Carousel>
   );
 }

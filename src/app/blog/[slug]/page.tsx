@@ -155,10 +155,12 @@ export default async function page({ params }: { params: { slug: string } }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdImage) }}
       />
-      <GridLayout size="blog" additional_class="">
+      <GridLayout size="blog" additional_class="max-md:pt-24">
         <Summary content={article.content} />
         <BlocBreadcrumb items={three} />
-        <h1 className="text-4xl mb-4 font-semibold">{article.title}</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl mb-4 font-semibold">
+          {article.title}
+        </h1>
         <div className="flex flex-col gap-4 mb-8 pb-4 border-b border-b-gray-200">
           <div className="flex justify-between">
             <DateArticle
@@ -176,7 +178,7 @@ export default async function page({ params }: { params: { slug: string } }) {
           alt={alt}
           placeholder="blur"
           blurDataURL={image.blurUpThumb}
-          className="rounded mb-12 shadow-lg"
+          className="rounded mb-12 shadow-lg max-w-full"
         />
 
         <ArticleContent content={article.content} />

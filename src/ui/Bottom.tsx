@@ -19,7 +19,7 @@ export default async function Bottom() {
     </nav>
 */
   return (
-    <div className="relative w-full h-24 overflow-hidden">
+    <div className="relative w-full h-20 sm:h-24 overflow-hidden">
       <IconLogoFooterGradient />
       <IconLogoFooter />
     </div>

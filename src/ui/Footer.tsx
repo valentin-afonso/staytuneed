@@ -13,7 +13,7 @@ export default function Footer() {
       </div>
       <GridLayout
         size="boxed"
-        additional_class=" flex justify-between w-full gap-8 pb-12"
+        additional_class=" flex justify-between w-full gap-8 lg:pb-12"
       >
         <FooterNav />
         <Socials />

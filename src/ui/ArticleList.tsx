@@ -24,7 +24,7 @@ export default function ArticleList({ articles, tags }: any) {
       />
       <DynamicListArticles
         articles={filtered_articles}
-        columns="grid-cols-4 gap-x-2 max-md:grid-cols-2 max-lg:grid-cols-[276px_276px_276px] max-xl:grid-cols-[276px_276px_276px_276px]"
+        columns="gap-x-2 grid-cols-2 sm:grid-cols-[200px_200px] md:grid-cols-3 lg:grid-cols-[276px_276px_276px] xl:grid-cols-[276px_276px_276px_276px]"
       />
     </>
   );

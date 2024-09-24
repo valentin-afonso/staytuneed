@@ -37,12 +37,14 @@ export default function page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <GridLayout size="boxed" additional_class="">
+      <GridLayout size="boxed" additional_class="max-md:pt-24">
         <BlocBreadcrumb items={three} />
-        <h1 className="font-black text-4xl text-center">
+        <h1 className="font-black text-2xl sm:text-3xl md:text-4xl text-center">
           Find Exactly What You Need
         </h1>
-        <BlocSearchBar />
+        <div className="mb-8 lg:mb-28">
+          <BlocSearchBar />
+        </div>
         <BlocArticlesList />
       </GridLayout>
     </>

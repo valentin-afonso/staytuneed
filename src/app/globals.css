@@ -255,10 +255,10 @@ body[data-scroll-locked] {
   left: 50%;
 }
 .logo_footer {
-  transform: translate(-50%, 79px);
+  transform: translate(-50%, 40%);
 }
 .logo_footer_gradient {
-  transform: translate(-52%, 54px);
+  transform: translate(-52%, 35%);
 }
 
 .link_primary::before {
