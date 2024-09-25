@@ -14,16 +14,17 @@ export default function SectionImageText() {
       <div className="flex flex-col max-w-[432px] gap-4">
         <TitleSecond>Explore the unknown</TitleSecond>
         <p className="pr-10">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit
-          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua.
+          Ready for something new? Let’s dive into the places, ideas, and
+          experiences that are waiting to be discovered. Whether it’s a hidden
+          gem or a fresh perspective, we’re all about exploring beyond the
+          usual. Join the adventure and see what surprises the web has in store
+          for us!
         </p>
         <ButtonPrimary url="/about" additional_class="">
           learn more
         </ButtonPrimary>
       </div>
-      <div className="relative grid grid-cols-2 grid-rows-[auto_auto] gap-2">
+      <div className="relative grid grid-cols-2 grid-rows-[auto_auto_auto] sm:grid-rows-[auto_auto] gap-2">
         <BlogGradient />
         <div className="group relative flex justify-between bg_blur col-start-1 col-end-3 row-start-1 row-end-1 h-60 rounded-sm overflow-hidden">
           <div className="flex flex-col gap-2 max-w-[50%] p-4 ">
@@ -41,17 +42,24 @@ export default function SectionImageText() {
             className="w-auto h-[111%] translate-x-[18px] translate-y-[-8px] group-hover:translate-x-[0px] group-hover:translate-y-[-16px] transition ease-in-out duration-700"
           />
         </div>
-        <div className="relative flex justify-between bg_blur col-start-1 col-end-2 row-start-2 row-end-3 h-60 rounded-sm overflow-hidden">
-          <div className="flex flex-col gap-2 p-4">
+        <div className="relative flex justify-between bg_blur col-start-1 col-end-3 sm:col-end-2 row-start-2 row-end-3 h-60 sm:h-64 rounded-sm overflow-hidden">
+          <div className="flex flex-col gap-2 p-4 justify-center items-center">
             <TitleSecond>Crafted with a Human Touch</TitleSecond>
             <p>
               Some articles come from authors, some from AI. When they team up,
               you get the best of both worlds !
             </p>
+            <Image
+              src="/img-author-ai.png"
+              width={348}
+              height={180}
+              alt="Picture of articles"
+              className="w-28 h-auto pt-2"
+            />
           </div>
           <div></div>
         </div>
-        <div className="group relative flex flex-col justify-end bg_blur col-start-2 col-end-3 row-start-2 row-end-3 h-60 rounded-sm overflow-hidden">
+        <div className="group relative flex flex-col justify-end bg_blur col-start-1 sm:col-start-2 col-end-3 row-end-4 sm:row-start-2 sm:row-end-3 h-60 sm:h-64 rounded-sm overflow-hidden">
           <ul className="flex items-end justify-center flex-wrap gap-2">
             <li className="rotate-[335deg] translate-y-[-34px] opacity-50 group-hover:translate-x-[0px] group-hover:translate-y-[-16px] transition ease-in-out duration-700">
               <Tag libelle="react" />
