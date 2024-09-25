@@ -11,7 +11,7 @@ export default function GridLayout({
 }: GridLayoutType) {
   let layout_width = "max-w-[100vw] min-[1176px]:max-w-[1176px]";
   if (size === "boxed") {
-    layout_width = "max-w-[100%] min-[1176px]:max-w-[1176px] px-4";
+    layout_width = "w-full max-w-[100%] min-[1176px]:max-w-[1176px] px-4";
   }
   if (size === "blog") {
     layout_width = "max-w-[100%] w-[840px]";
@@ -21,9 +21,7 @@ export default function GridLayout({
   }
 
   return (
-    <div
-      className={`${layout_width} max-w- mx-auto 2xl:px-0 ${additional_class}`}
-    >
+    <div className={`${layout_width} mx-auto 2xl:px-0 ${additional_class}`}>
       {children}
     </div>
   );
