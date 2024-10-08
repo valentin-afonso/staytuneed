@@ -1,6 +1,6 @@
 export const queryBlogs = `
-query Blogs {
-  allArticles {
+query Blogs($tags: LinksFilter, $skip: IntType, $first: IntType) {
+  allArticles(filter: {tags: $tags}, skip: $skip first: $first) {
     _createdAt
     _updatedAt
     id

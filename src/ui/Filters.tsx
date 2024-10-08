@@ -6,8 +6,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { getFilteredArticles } from "@/app/actions";
 
-export default function Filters({ tags, selectedTags, setSelectedTags }: any) {
+export default function Filters({
+  tags,
+  selectedTags,
+  setSelectedTags,
+  setFilteredArticles,
+  setSkip,
+}: any) {
+  /*
   const handleToggle = (value: string) => {
     if (selectedTags.includes(value)) {
       setSelectedTags(selectedTags.filter((tag: any) => tag !== value));
@@ -15,12 +23,29 @@ export default function Filters({ tags, selectedTags, setSelectedTags }: any) {
       setSelectedTags([...selectedTags, value]);
     }
   };
+  */
+
+  const handleTagToggle = async (tagId: string) => {
+    let updatedTags: string[] = [];
+    if (selectedTags.includes(tagId)) {
+      updatedTags = selectedTags.filter((id: any) => id !== tagId);
+    } else {
+      updatedTags = [...selectedTags, tagId];
+    }
+
+    setSelectedTags(updatedTags);
+
+    // Fetch les articles filtrés côté serveur
+    setSkip(0);
+    const filteredArticles = await getFilteredArticles(updatedTags, 0);
+    setFilteredArticles(filteredArticles); // Mets à jour la liste des articles
+  };
 
   const list_tags = tags.map((tag: any) => (
     <CarouselItem key={tag.id} className={`grid basis-auto pl-3`}>
       <ToggleGroupItem
-        value={tag.libelle}
-        onClick={() => handleToggle(tag.libelle)}
+        value={tag.id}
+        onClick={() => handleTagToggle(tag.id)}
         className="whitespace-nowrap text-sm"
       >
         {tag.libelle}

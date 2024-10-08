@@ -2,6 +2,8 @@ import BlocSearchBar from "@/ui/BlocSearchBar";
 import BlocArticlesList from "@/ui/BlocArticlesList";
 import GridLayout from "@/ui/GridLayout";
 import BlocBreadcrumb from "@/ui/BlocBreadcrumb";
+import { Suspense } from "react";
+import SkeletonArticles from "@/ui/SkeletonArticles";
 
 export async function generateMetadata() {
   return {
@@ -45,7 +47,9 @@ export default function page() {
         <div className="mb-8 lg:mb-28">
           <BlocSearchBar />
         </div>
-        <BlocArticlesList />
+        <Suspense fallback={<SkeletonArticles />}>
+          <BlocArticlesList />
+        </Suspense>
       </GridLayout>
     </>
   );
