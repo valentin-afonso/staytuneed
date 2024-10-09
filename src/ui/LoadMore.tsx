@@ -43,7 +43,6 @@ export default function LoadMore({
         ...newArticles,
       ]);
       setTotalArticles(total);
-      console.log(total);
     } catch (error) {
       console.error("Erreur lors du chargement des articles :", error);
     } finally {
