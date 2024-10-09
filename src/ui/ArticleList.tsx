@@ -5,7 +5,7 @@ import Filters from "@/ui/Filters";
 import DynamicListArticles from "@/ui/DynamicListArticles";
 import LoadMore from "@/ui/LoadMore";
 
-export default function ArticleList({ articles, tags }: any) {
+export default function ArticleList({ articles, tags, allTagIds }: any) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [filteredArticles, setFilteredArticles] = useState<any[]>(articles);
   const [skip, setSkip] = useState<number>(0);
@@ -27,6 +27,7 @@ export default function ArticleList({ articles, tags }: any) {
         skip={skip}
         setSkip={setSkip}
         selectedTags={selectedTags}
+        filteredArticles={filteredArticles}
         setFilteredArticles={setFilteredArticles}
       />
     </>

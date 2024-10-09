@@ -37,8 +37,12 @@ export default function Filters({
 
     // Fetch les articles filtrés côté serveur
     setSkip(0);
-    const filteredArticles = await getFilteredArticles(updatedTags, 0);
-    setFilteredArticles(filteredArticles); // Mets à jour la liste des articles
+    const { articles: newArticles, total } = await getFilteredArticles(
+      updatedTags,
+      0
+    );
+    // const filteredArticles = await getFilteredArticles(updatedTags, 0);
+    setFilteredArticles(newArticles); // Mets à jour la liste des articles
   };
 
   const list_tags = tags.map((tag: any) => (

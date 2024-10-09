@@ -9,7 +9,7 @@ export default async function BlocArticlesList() {
     query: queryBlogs,
     variables: {
       skip: 0,
-      first: 4,
+      first: 16,
     },
   });
   const { allTags } = await performRequest({

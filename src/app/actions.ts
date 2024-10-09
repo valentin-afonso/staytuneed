@@ -11,9 +11,11 @@ export async function getFilteredArticles(tags: String[], skip: Number) {
         anyIn: tags,
       },
       skip: skip,
-      first: 4,
+      first: 16,
     },
   });
-  return allArticles;
+  // eturn allArticles;
+  const totalArticles = allArticles.length;
+  return { articles: allArticles, total: totalArticles };
   // revalidatePath("/blog");
 }
