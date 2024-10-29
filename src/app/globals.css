@@ -201,6 +201,19 @@ div.bg_blur {
   color: #6400ff;
   text-decoration: underline;
 }
+.legal_page h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.legal_page .structured_text h2 {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+.legal_page .structured_text p {
+  font-size: 0.9rem;
+  color: #6d6d6d;
+}
+
 mark {
   background: rgb(60, 0, 224);
   background: linear-gradient(

@@ -87,7 +87,7 @@ export default function Summary({ content }: any) {
             <li key={heading.id} className={`level-${heading.level}`}>
               <a
                 href={`#${heading.id}`}
-                className={`inline-block text-xs leading-normal ${
+                className={`inline-block text-xs leading-normal max-w-48 ${
                   activeId === heading.id
                     ? "text-black font-bold"
                     : "text-gray-light"
