@@ -15,7 +15,6 @@ export default function Loading() {
         <div className="w-full h-[1px] rounded-xl bg-slate-100"></div>
         <div className="w-full h-[472px] rounded-xl bg-slate-100"></div>
       </div>
-      <p>loading...</p>
     </>
   );
 }
