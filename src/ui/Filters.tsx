@@ -1,3 +1,5 @@
+"use client";
+
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import {
   Carousel,
@@ -6,15 +8,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { getFilteredArticles } from "@/app/actions";
+import { performRequest } from "@/lib/datocms";
 
-export default function Filters({
-  tags,
-  selectedTags,
-  setSelectedTags,
-  setFilteredArticles,
-  setSkip,
-}: any) {
+import { queryAllTags } from "@/cms/queries/queryTags";
+
+export default function Filters({ tags }: any) {
+  // const allTagSlug = tags.map((tag: { slug: string }) => tag.slug);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const router = useRouter();
   /*
   const handleToggle = (value: string) => {
     if (selectedTags.includes(value)) {
@@ -25,7 +29,18 @@ export default function Filters({
   };
   */
 
-  const handleTagToggle = async (tagId: string) => {
+  const handleTagToggle = (tagSlug: string) => {
+    let updatedTags: string[] = [];
+    if (selectedTags.includes(tagSlug)) {
+      updatedTags = selectedTags.filter((slug: any) => slug !== tagSlug);
+    } else {
+      updatedTags = [...selectedTags, tagSlug];
+    }
+    setSelectedTags(updatedTags);
+    const chaine = updatedTags.join(",");
+    router.push(`/blog?tags=${chaine}`);
+
+    /*
     let updatedTags: string[] = [];
     if (selectedTags.includes(tagId)) {
       updatedTags = selectedTags.filter((id: any) => id !== tagId);
@@ -43,13 +58,14 @@ export default function Filters({
     );
     // const filteredArticles = await getFilteredArticles(updatedTags, 0);
     setFilteredArticles(newArticles); // Mets à jour la liste des articles
+    */
   };
 
   const list_tags = tags.map((tag: any) => (
     <CarouselItem key={tag.id} className={`grid basis-auto pl-3`}>
       <ToggleGroupItem
-        value={tag.id}
-        onClick={() => handleTagToggle(tag.id)}
+        value={tag.slug}
+        onClick={() => handleTagToggle(tag.slug)}
         className="whitespace-nowrap text-sm"
       >
         {tag.libelle}

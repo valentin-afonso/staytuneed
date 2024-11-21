@@ -4,6 +4,12 @@ import GridLayout from "@/ui/GridLayout";
 import BlocBreadcrumb from "@/ui/BlocBreadcrumb";
 import { Suspense } from "react";
 import SkeletonArticles from "@/ui/SkeletonArticles";
+import Filters from "@/ui/Filters";
+import BlocFilters from "@/ui/BlocFilters";
+
+import { performRequest } from "@/lib/datocms";
+
+import { queryAllTags } from "@/cms/queries/queryTags";
 
 export async function generateMetadata() {
   return {
@@ -11,7 +17,7 @@ export async function generateMetadata() {
   };
 }
 
-export default function page() {
+export default function page({ searchParams }: any) {
   const three = [
     { url: "/", title: "Home" },
     { url: "/blog", title: "Blog" },
@@ -47,8 +53,9 @@ export default function page() {
         <div className="mb-8 lg:mb-28">
           <BlocSearchBar />
         </div>
+        <BlocFilters />
         <Suspense fallback={<SkeletonArticles />}>
-          <BlocArticlesList />
+          <BlocArticlesList searchParams={searchParams} />
         </Suspense>
       </GridLayout>
     </>

@@ -12,13 +12,6 @@ export default function ArticleList({ articles, tags, allTagIds }: any) {
 
   return (
     <>
-      <Filters
-        tags={tags}
-        selectedTags={selectedTags}
-        setSelectedTags={setSelectedTags}
-        setFilteredArticles={setFilteredArticles}
-        setSkip={setSkip}
-      />
       <DynamicListArticles
         articles={filteredArticles}
         columns="gap-x-2 grid-cols-2 sm:grid-cols-[200px_200px] md:grid-cols-3 lg:grid-cols-[276px_276px_276px] xl:grid-cols-[276px_276px_276px_276px]"
