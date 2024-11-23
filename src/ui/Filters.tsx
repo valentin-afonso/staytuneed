@@ -37,8 +37,9 @@ export default function Filters({ tags }: any) {
       updatedTags = [...selectedTags, tagSlug];
     }
     setSelectedTags(updatedTags);
-    const chaine = updatedTags.join(",");
-    router.push(`/blog?tags=${chaine}`);
+    const query =
+      updatedTags.length > 0 ? `?tags=${updatedTags.join(",")}` : "";
+    router.replace(`/blog${query}`);
 
     /*
     let updatedTags: string[] = [];

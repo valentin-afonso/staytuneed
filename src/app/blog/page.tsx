@@ -53,7 +53,10 @@ export default function page({ searchParams }: any) {
         <div className="mb-8 lg:mb-28">
           <BlocSearchBar />
         </div>
-        <BlocFilters />
+        <Suspense fallback={<p>loading filters...</p>}>
+          <BlocFilters />
+        </Suspense>
+
         <Suspense fallback={<SkeletonArticles />}>
           <BlocArticlesList searchParams={searchParams} />
         </Suspense>

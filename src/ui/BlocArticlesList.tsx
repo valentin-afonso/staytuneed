@@ -6,7 +6,7 @@ import ArticleList from "@/ui/ArticleList";
 import DynamicListArticles from "@/ui/DynamicListArticles";
 
 export default async function BlocArticlesList({ searchParams }: any) {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  // await new Promise((resolve) => setTimeout(resolve, 5000));
   /*
   const { allArticles } = await performRequest({
     query: queryBlogs,
@@ -39,6 +39,7 @@ export default async function BlocArticlesList({ searchParams }: any) {
       skip: 0,
       first: 16,
     },
+    revalidate: 60,
   });
   // <ArticleList articles={allArticles} tags={allTags} allTagIds={allTagIds} />
   return (
