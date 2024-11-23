@@ -12,7 +12,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     <>
       <GridLayout size="boxed" additional_class="max-md:pt-24">
         <h1 className="font-black text-2xl sm:text-3xl md:text-4xl text-center">
-          Find Exactly What You Need
+          Whrite by...
         </h1>
       </GridLayout>
     </>
