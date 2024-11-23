@@ -39,7 +39,6 @@ export default async function BlocArticlesList({ searchParams }: any) {
       skip: 0,
       first: 16,
     },
-    revalidate: 60,
   });
   // <ArticleList articles={allArticles} tags={allTags} allTagIds={allTagIds} />
   return (

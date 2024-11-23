@@ -4,7 +4,7 @@ import GridLayout from "@/ui/GridLayout";
 import BlocBreadcrumb from "@/ui/BlocBreadcrumb";
 import { Suspense } from "react";
 import SkeletonArticles from "@/ui/SkeletonArticles";
-import Filters from "@/ui/Filters";
+import FiltersSkeleton from "@/ui/FiltersSkeleton";
 import BlocFilters from "@/ui/BlocFilters";
 
 import { performRequest } from "@/lib/datocms";
@@ -50,10 +50,10 @@ export default function page({ searchParams }: any) {
         <h1 className="font-black text-2xl sm:text-3xl md:text-4xl text-center">
           Find Exactly What You Need
         </h1>
-        <div className="mb-8 lg:mb-28">
+        <div className="mb-8 lg:mb-16">
           <BlocSearchBar />
         </div>
-        <Suspense fallback={<p>loading filters...</p>}>
+        <Suspense fallback={<FiltersSkeleton />}>
           <BlocFilters />
         </Suspense>
 

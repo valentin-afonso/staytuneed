@@ -1,5 +1,3 @@
-"use client";
-
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import {
   Carousel,
@@ -8,69 +6,25 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { getFilteredArticles } from "@/app/actions";
-import { performRequest } from "@/lib/datocms";
-
-import { queryAllTags } from "@/cms/queries/queryTags";
+import Filter from "@/ui/Filter";
+import FilterCount from "@/ui/FilterCount";
+import FilterCountSkeleton from "@/ui/FilterCountSkeleton";
+import { Suspense } from "react";
 
 export default function Filters({ tags }: any) {
-  // const allTagSlug = tags.map((tag: { slug: string }) => tag.slug);
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const router = useRouter();
-  /*
-  const handleToggle = (value: string) => {
-    if (selectedTags.includes(value)) {
-      setSelectedTags(selectedTags.filter((tag: any) => tag !== value));
-    } else {
-      setSelectedTags([...selectedTags, value]);
-    }
-  };
-  */
-
-  const handleTagToggle = (tagSlug: string) => {
-    let updatedTags: string[] = [];
-    if (selectedTags.includes(tagSlug)) {
-      updatedTags = selectedTags.filter((slug: any) => slug !== tagSlug);
-    } else {
-      updatedTags = [...selectedTags, tagSlug];
-    }
-    setSelectedTags(updatedTags);
-    const query =
-      updatedTags.length > 0 ? `?tags=${updatedTags.join(",")}` : "";
-    router.replace(`/blog${query}`);
-
-    /*
-    let updatedTags: string[] = [];
-    if (selectedTags.includes(tagId)) {
-      updatedTags = selectedTags.filter((id: any) => id !== tagId);
-    } else {
-      updatedTags = [...selectedTags, tagId];
-    }
-
-    setSelectedTags(updatedTags);
-
-    // Fetch les articles filtrés côté serveur
-    setSkip(0);
-    const { articles: newArticles, total } = await getFilteredArticles(
-      updatedTags,
-      0
-    );
-    // const filteredArticles = await getFilteredArticles(updatedTags, 0);
-    setFilteredArticles(newArticles); // Mets à jour la liste des articles
-    */
-  };
-
   const list_tags = tags.map((tag: any) => (
     <CarouselItem key={tag.id} className={`grid basis-auto pl-3`}>
-      <ToggleGroupItem
-        value={tag.slug}
-        onClick={() => handleTagToggle(tag.slug)}
-        className="whitespace-nowrap text-sm"
-      >
-        {tag.libelle}
-      </ToggleGroupItem>
+      <Filter tag={tag}>
+        <ToggleGroupItem
+          value={tag.slug}
+          className="flex items-center gap-2 whitespace-nowrap text-sm"
+        >
+          {tag.libelle}
+          <Suspense fallback={<FilterCountSkeleton />}>
+            <FilterCount tagId={tag.id} />
+          </Suspense>
+        </ToggleGroupItem>
+      </Filter>
     </CarouselItem>
   ));
   return (
