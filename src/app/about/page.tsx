@@ -2,7 +2,7 @@ import BlocBreadcrumb from "@/ui/BlocBreadcrumb";
 import GridLayout from "@/ui/GridLayout";
 import TitleDouble from "@/ui/TitleDouble";
 
-export default function page() {
+export default function Page() {
   const three = [
     { url: "/", title: "Home" },
     { url: "/about", title: "About" },

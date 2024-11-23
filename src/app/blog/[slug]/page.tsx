@@ -65,7 +65,7 @@ export async function generateMetadata({
   };
 }
 
-export default function page({ params }: { params: { slug: string } }) {
+export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const three = [
     { url: "/", title: "Home" },

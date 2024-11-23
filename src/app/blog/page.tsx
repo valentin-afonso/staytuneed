@@ -13,7 +13,7 @@ export async function generateMetadata() {
   };
 }
 
-export default function page({ searchParams }: any) {
+export default function Page({ searchParams }: any) {
   const three = [
     { url: "/", title: "Home" },
     { url: "/blog", title: "Blog" },
