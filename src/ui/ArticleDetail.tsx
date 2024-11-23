@@ -11,6 +11,7 @@ import Summary from "@/ui/Summary";
 import SectionArticlesSameAuthor from "@/ui/SectionArticlesSameAuthor";
 import { Suspense } from "react";
 import SliderAticlesSkeleton from "@/ui/SliderAticlesSkeleton";
+import ButtonPrimary from "@/ui/ButtonPrimary";
 
 export default async function ArticleDetail({ slug }: any) {
   const { article } = await performRequest({
@@ -91,9 +92,17 @@ export default async function ArticleDetail({ slug }: any) {
       <Author author={article.author} />
       {article.author && (
         <>
-          <h2 className="text-2xl font-medium mt-8 mb-4">
-            From the same author
-          </h2>
+          <div className="flex justify-between items-center">
+            <h2 className="text-2xl font-medium mt-8 mb-4">
+              From the same author
+            </h2>
+            <ButtonPrimary
+              url={`/blog/author/${article.author.slug}`}
+              additional_class=""
+            >
+              See all
+            </ButtonPrimary>
+          </div>
           <Suspense fallback={<SliderAticlesSkeleton />}>
             <SectionArticlesSameAuthor id_author={article.author.id} />
           </Suspense>

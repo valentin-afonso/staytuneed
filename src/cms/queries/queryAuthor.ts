@@ -7,6 +7,7 @@ query Author($slug: String!) {
     socialUrl
     social
     pictureProfil {
+      url
       alt
       blurhash
       height

@@ -5,6 +5,7 @@ import { queryAuthor } from "@/cms/queries/queryAuthor";
 import { Suspense } from "react";
 import ArtilcListFromAuthor from "@/ui/ArtilcListFromAuthor";
 import SkeletonArticles from "@/ui/SkeletonArticles";
+import Image from "next/image";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -51,7 +52,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
   });
 
   const id_author = author.id;
-
+  /*
+          <a href={author.socialUrl} target="_blank">
+            {author.social}
+          </a>
+*/
   return (
     <>
       <script
@@ -60,9 +65,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
       />
       <GridLayout size="boxed" additional_class="max-md:pt-24">
         <BlocBreadcrumb items={three} />
-        <h1 className="font-black text-2xl sm:text-3xl md:text-4xl text-center">
-          Whrite by...
-        </h1>
+        <div className="flex flex-col items-center gap-4 mb-16">
+          <Image
+            src={author.pictureProfil?.url}
+            width={author.pictureProfil?.width}
+            height={author.pictureProfil?.height}
+            alt={author.social}
+            className="rounded-full w-16 h-16 object-cover"
+          />
+          <h1 className="font-black text-2xl sm:text-3xl md:text-4xl text-center">
+            Whrite by {author.firstname} {author.lastname}
+          </h1>
+        </div>
         <Suspense fallback={<SkeletonArticles />}>
           <ArtilcListFromAuthor idAuthor={id_author} />
         </Suspense>
