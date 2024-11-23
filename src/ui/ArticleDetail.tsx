@@ -11,7 +11,6 @@ import Summary from "@/ui/Summary";
 import SectionArticlesSameAuthor from "@/ui/SectionArticlesSameAuthor";
 
 export default async function ArticleDetail({ slug }: any) {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
   const { article } = await performRequest({
     query: queryBlog,
     variables: { slug },
