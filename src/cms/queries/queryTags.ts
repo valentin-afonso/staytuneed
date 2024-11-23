@@ -3,5 +3,6 @@ query AllTags {
   allTags {
     id
     libelle
+    slug
   }
 }`;

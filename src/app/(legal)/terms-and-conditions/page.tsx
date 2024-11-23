@@ -2,7 +2,7 @@ import { performRequest } from "@/lib/datocms";
 import { queryConditions } from "@/cms/queries/queryConditions";
 import { StructuredText } from "react-datocms";
 
-export default async function page() {
+export default async function Page() {
   const { termAndCondition } = await performRequest({ query: queryConditions });
   return (
     <div className="legal_page">

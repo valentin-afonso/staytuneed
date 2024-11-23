@@ -1,18 +1,18 @@
+import DynamicListArticles from "@/ui/DynamicListArticles";
 import { performRequest } from "@/lib/datocms";
 import { queryArticlesSameAuthor } from "@/cms/queries/queryArticlesSameAuthor";
-import DynamicListArticles from "@/ui/DynamicListArticles";
 
-export default async function SectionArticlesSameAuthor({ id_author }: any) {
+export default async function ArtilcListFromAuthor({ idAuthor }: any) {
   const { allArticles } = await performRequest({
     query: queryArticlesSameAuthor,
-    variables: { eq: id_author, first: 2 },
+    variables: { eq: idAuthor },
   });
-  if (!allArticles) return null;
+
   return (
     <>
       <DynamicListArticles
         articles={allArticles}
-        columns="grid-cols-2 sm:grid-cols-[200px_200px] md:grid-cols-[276px_276px] gap-4 mb-16"
+        columns="gap-x-2 grid-cols-2 sm:grid-cols-[200px_200px] md:grid-cols-3 lg:grid-cols-[276px_276px_276px] xl:grid-cols-[276px_276px_276px_276px]"
       />
     </>
   );

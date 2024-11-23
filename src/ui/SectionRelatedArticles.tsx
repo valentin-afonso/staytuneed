@@ -27,7 +27,6 @@ export default async function SectionRelatedArticles({
 
   return (
     <>
-      <h2 className="text-2xl font-medium mt-8">You’ll love these too</h2>
       <SliderArticles articles={allArticles} slidePerView="3" />
     </>
   );

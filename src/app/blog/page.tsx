@@ -4,6 +4,9 @@ import GridLayout from "@/ui/GridLayout";
 import BlocBreadcrumb from "@/ui/BlocBreadcrumb";
 import { Suspense } from "react";
 import SkeletonArticles from "@/ui/SkeletonArticles";
+import FiltersSkeleton from "@/ui/FiltersSkeleton";
+import BlocFilters from "@/ui/BlocFilters";
+import DynamicListArticles from "@/ui/DynamicListArticles";
 
 export async function generateMetadata() {
   return {
@@ -11,7 +14,7 @@ export async function generateMetadata() {
   };
 }
 
-export default function page() {
+export default function Page({ searchParams }: any) {
   const three = [
     { url: "/", title: "Home" },
     { url: "/blog", title: "Blog" },
@@ -44,11 +47,15 @@ export default function page() {
         <h1 className="font-black text-2xl sm:text-3xl md:text-4xl text-center">
           Find Exactly What You Need
         </h1>
-        <div className="mb-8 lg:mb-28">
+        <div className="mb-8 lg:mb-16">
           <BlocSearchBar />
         </div>
+        <Suspense fallback={<FiltersSkeleton />}>
+          <BlocFilters />
+        </Suspense>
+
         <Suspense fallback={<SkeletonArticles />}>
-          <BlocArticlesList />
+          <BlocArticlesList searchParams={searchParams} />
         </Suspense>
       </GridLayout>
     </>

@@ -29,6 +29,7 @@ query Blog($slug: String!) {
       firstname
       lastname
       social
+      slug
       socialUrl
       pictureProfil {
         url

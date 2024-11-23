@@ -2,7 +2,7 @@ import { performRequest } from "@/lib/datocms";
 import { queryPolicyPrivacy } from "@/cms/queries/queryPrivacyPolicy";
 import { StructuredText } from "react-datocms";
 
-export default async function page() {
+export default async function Page() {
   const { privacyPolicy } = await performRequest({ query: queryPolicyPrivacy });
   return (
     <div className="legal_page">
