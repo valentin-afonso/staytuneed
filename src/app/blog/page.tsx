@@ -7,10 +7,6 @@ import SkeletonArticles from "@/ui/SkeletonArticles";
 import FiltersSkeleton from "@/ui/FiltersSkeleton";
 import BlocFilters from "@/ui/BlocFilters";
 
-import { performRequest } from "@/lib/datocms";
-
-import { queryAllTags } from "@/cms/queries/queryTags";
-
 export async function generateMetadata() {
   return {
     robots: "index,follow",
