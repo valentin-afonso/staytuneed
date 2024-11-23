@@ -9,6 +9,8 @@ import SectionRelatedArticles from "@/ui/SectionRelatedArticles";
 import Image from "next/image";
 import Summary from "@/ui/Summary";
 import SectionArticlesSameAuthor from "@/ui/SectionArticlesSameAuthor";
+import { Suspense } from "react";
+import SliderAticlesSkeleton from "@/ui/SliderAticlesSkeleton";
 
 export default async function ArticleDetail({ slug }: any) {
   const { article } = await performRequest({
@@ -88,9 +90,19 @@ export default async function ArticleDetail({ slug }: any) {
       <ArticleContent content={article.content} />
       <Author author={article.author} />
       {article.author && (
-        <SectionArticlesSameAuthor id_author={article.author.id} />
+        <>
+          <h2 className="text-2xl font-medium mt-8 mb-4">
+            From the same author
+          </h2>
+          <Suspense fallback={<SliderAticlesSkeleton />}>
+            <SectionArticlesSameAuthor id_author={article.author.id} />
+          </Suspense>
+        </>
       )}
-      <SectionRelatedArticles tags={article.tags} />
+      <h2 className="text-2xl font-medium mt-8">You’ll love these too</h2>
+      <Suspense fallback={<SliderAticlesSkeleton />}>
+        <SectionRelatedArticles tags={article.tags} />
+      </Suspense>
     </>
   );
 }
