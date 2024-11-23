@@ -2,7 +2,7 @@ import ArticleTeaser from "@/ui/ArticleTeaser";
 import NoArticle from "@/ui/NoArticle";
 
 export default function DynamicListArticles({ articles, columns }: any) {
-  if (articles.length === 0)
+  if (!articles || articles.length === 0)
     return (
       <NoArticle text="It’s a bit quiet here now, but articles will be up soon!" />
     );

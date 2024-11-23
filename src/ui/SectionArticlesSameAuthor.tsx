@@ -5,7 +5,7 @@ import DynamicListArticles from "@/ui/DynamicListArticles";
 export default async function SectionArticlesSameAuthor({ id_author }: any) {
   const { allArticles } = await performRequest({
     query: queryArticlesSameAuthor,
-    variables: { eq: id_author },
+    variables: { eq: id_author, first: 2 },
   });
   if (!allArticles) return null;
   return (

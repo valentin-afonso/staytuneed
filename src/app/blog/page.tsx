@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import SkeletonArticles from "@/ui/SkeletonArticles";
 import FiltersSkeleton from "@/ui/FiltersSkeleton";
 import BlocFilters from "@/ui/BlocFilters";
+import DynamicListArticles from "@/ui/DynamicListArticles";
 
 export async function generateMetadata() {
   return {
