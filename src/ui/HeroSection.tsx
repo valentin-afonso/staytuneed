@@ -5,10 +5,11 @@ import BlocSearchBar from "@/ui/BlocSearchBar";
 import Sketch from "@/ui/svg/Sketch";
 import PatternPrimary from "@/ui/svg/PatternPrimary";
 import PatternSecondary from "@/ui/svg/PatternSecondary";
+import ListAuthor from "@/ui/ListAuthor";
 
 export default function HeroSection({ title, slogan }: any) {
   return (
-    <GridLayout size="boxed" additional_class="relative mb-32 mt-28">
+    <GridLayout size="boxed" additional_class="relative mb-32 mt-20">
       <div className="absolute left-0 max-lg:hidden">
         <PatternPrimary />
       </div>
@@ -21,7 +22,9 @@ export default function HeroSection({ title, slogan }: any) {
         level="1"
         align="center"
       />
-      <div className=" mb-28">
+
+      <div className="mb-16">
+        <ListAuthor />
         <BlocSearchBar />
       </div>
       <Slogan text={slogan} />
