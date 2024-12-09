@@ -32,7 +32,7 @@ export default function SliderArticles({ articles, slidePerView }: any) {
       opts={{
         align: "start",
       }}
-      className="w-full min-h-[420px]"
+      className="w-full min-h-[420px] side_gradient"
     >
       <CarouselContent className="-ml-4 sm:-ml-8 py-4 px-1">
         {article_slides}
