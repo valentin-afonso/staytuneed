@@ -47,7 +47,7 @@ export default function Page({ searchParams }: any) {
         <h1 className="font-black text-2xl sm:text-3xl md:text-4xl text-center">
           Find Exactly What You Need
         </h1>
-        <div className="mb-8 lg:mb-16">
+        <div className="mt-6 mb-8 lg:mb-16">
           <BlocSearchBar />
         </div>
         <Suspense fallback={<FiltersSkeleton />}>
