@@ -505,6 +505,7 @@ body[data-scroll-locked] {
   right: 15%;
   animation-delay: 0.3s;
 }
+/*
 .side_gradient::before {
   content: "";
   position: absolute;
@@ -536,6 +537,7 @@ body[data-scroll-locked] {
   );
   z-index: 1;
 }
+  */
 .list_avatar li:last-child {
   z-index: 0;
 }
