@@ -17,6 +17,10 @@ query Footer {
           id
           slug
         }
+        ... on AuthorPageRecord {
+          id
+          slug
+        }
       }
     }
   }
