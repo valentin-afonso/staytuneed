@@ -17,6 +17,10 @@ query Header {
           id
           slug
         }
+        ... on AuthorPageRecord {
+          id
+          slug
+        }
       }
     }
   }
