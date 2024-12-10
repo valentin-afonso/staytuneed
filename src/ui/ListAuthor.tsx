@@ -14,16 +14,16 @@ export default async function ListAuthor() {
         alt={author?.pictureProfil.alt}
         placeholder="blur"
         blurDataURL={author?.pictureProfil.blurUpThumb}
-        className="rounded-full max-w-full w-12 h-12 border-white border-2"
+        className="rounded-full w-12 max-w-12  h-12 border-white border-2"
       />
     </li>
   ));
   return (
-    <div className="flex items-center justify-center mt-8 md:mt-12 mb-4">
+    <div className="flex flex-col gap-2 md:gap-0 md:flex-row items-center justify-center mt-8 md:mt-12 mb-4">
       <ul className="list_avatar flex justify-center items-center flex-row-reverse">
         {list_author}
       </ul>
-      <p className="text-gray-light text-sm bg_blur rounded-sm px-4 py-1 shadow-light border border-white">
+      <p className="text-gray-light text-xs md:text-sm bg_blur rounded-sm px-4 py-1 shadow-light border border-white">
         🔥​ Currently, 2 engaged and enthusiastic editors.
       </p>
     </div>
