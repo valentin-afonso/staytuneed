@@ -1,7 +1,12 @@
 export const queryAllAuthors = `
 query MyQuery {
   allAuthors {
-    id,
+    firstname
+    lastname
+    id
+    slug
+    socialUrl
+    social
     pictureProfil {
       height
       width

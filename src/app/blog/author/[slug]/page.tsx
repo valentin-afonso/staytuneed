@@ -12,7 +12,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const three = [
     { url: "/", title: "Home" },
     { url: "/blog", title: "Blog" },
-    { url: "/blog", title: "Author" },
+    { url: "/blog/author", title: "Author" },
     { url: `/blog/author/${slug}`, title: slug },
   ];
 
