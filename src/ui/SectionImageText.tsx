@@ -28,10 +28,11 @@ export default function SectionImageText() {
         <BlogGradient />
         <div className="group relative flex justify-between bg_blur col-start-1 col-end-3 row-start-1 row-end-1 h-60 rounded-sm overflow-hidden">
           <div className="flex flex-col gap-2 max-w-[50%] p-4 ">
-            <TitleSecond>Explore the unknown</TitleSecond>
+            <TitleSecond>New Articles Added Regularly</TitleSecond>
             <p>
-              Stay on top of the latest technologies and trends in the digital
-              world, and never miss out on any important updates !
+              Stay up to date with the latest trends ! New articles are
+              published regularly to help you expand your knowledge, discover
+              innovative tools, and sharpen your developer skills.
             </p>
           </div>
           <Image
